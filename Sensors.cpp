@@ -3,7 +3,7 @@
  * Description:	Sensors class handles all input from ultrasonic sensors and
  * 				input methods. All input values from the sensors are stored
  *				in the Data class.
- * Manager:		Roman
+ * Manager:		Roman S.
  */
 
 #include "Sensors.h"
