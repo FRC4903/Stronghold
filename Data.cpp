@@ -2,6 +2,7 @@
  * File Name:	Data.cpp
  * Description:	Data class contains instance of all variables used by program.
  * 				Data class controls how classes access each other and variables.
+ * Manager: 	Abhi Gupta
  */
 
 #include "Data.h"
