@@ -6,13 +6,11 @@
 #include <iostream>
 #include "Data.h"
 
-using namespace std;
-
-class Controls {
+class Controls
+{
 public:
 	Controls();
 	~Controls();
-	
 };
 
 #endif

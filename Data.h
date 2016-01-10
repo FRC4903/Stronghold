@@ -9,13 +9,20 @@
 #include "Auto.h"
 #include "AI.h"
 
-using namespace std;
-
-class Data {
+class Data
+{
 public:
-	Data();
-	~Data();
-	
+	static void init();
+	static Sensors getSensors();
+	static Auto getAuto();
+	static Controls getControls();
+	static AI getAI();
+
+private:
+	static Controls controls;
+	static Sensors sensors;
+	static AI brains;
+	static Auto auton;
 };
 
 #endif
