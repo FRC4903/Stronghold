@@ -1,10 +1,9 @@
 // AI.h
 
-#ifndef AI_H_
-#define AI_H_
+#ifndef AI_H
+#define AI_H
 
-#include <iostream>
-#include "Data.h"
+#include "Resources.h"
 
 class AI
 {

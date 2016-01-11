@@ -5,17 +5,15 @@
  * Manager: 	Abhi Gupta
  */
 
-#include "Data.h"
-
-using namespace std;
-
+#include "Resources.h"
 
 void Data::init()
 {
-	Data::controls = new Controls();
-	Data::sensors = new Sensors();
-	Data::brains = new AI();
-	Data::auton = new Auto();
+	// Setup inital values for all variables
+	Data::controls;
+	Data::sensors;
+	Data::brains;
+	Data::auton;
 }
 
 Controls Data::getControls()
