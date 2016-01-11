@@ -1,10 +1,9 @@
 // Auto.h
 
-#ifndef AUTO_H_
-#define AUTO_H_
+#ifndef AUTO_H
+#define AUTO_H
 
-#include <iostream>
-#include "Data.h"
+#include "Resources.h"
 
 class Auto
 {

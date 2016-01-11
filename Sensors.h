@@ -1,10 +1,9 @@
 // Sensors.h
 
-#ifndef SENSORS_H_
-#define SENSORS_H_
+#ifndef SENSORS_H
+#define SENSORS_H
 
-#include <iostream>
-#include "Data.h"
+#include "Resources.h"
 
 class Sensors
 {

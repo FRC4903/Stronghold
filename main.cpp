@@ -1,9 +1,6 @@
 // main.cpp
 
-#include <iostream>
-#include "Data.h"
-
-using namespace std;
+#include "Resources.h"
 
 int main()
 {
