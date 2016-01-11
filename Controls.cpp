@@ -6,11 +6,14 @@
 
 #include "Controls.h"
 
-Controls::Controls() {
+using namespace std;
+
+Controls::Controls()
+{
  	// Controls constructor
- 	Data library;
 }
 
-Controls::~Controls() {
+Controls::~Controls()
+{
 	// Controls deconstructor
 }

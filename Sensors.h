@@ -6,13 +6,11 @@
 #include <iostream>
 #include "Data.h"
 
-using namespace std;
-
-class Sensors {
+class Sensors
+{
 public:
 	Sensors();
 	~Sensors();
-	
 };
 
 #endif

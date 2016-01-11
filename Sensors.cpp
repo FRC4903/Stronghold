@@ -8,11 +8,14 @@
 
 #include "Sensors.h"
 
-Sensors::Sensors() {
+using namespace std;
+
+Sensors::Sensors()
+{
 	// Sensors constructor
-	Data library;
 }
 
-Sensors::~Sensors() {
+Sensors::~Sensors()
+{
 	// Sensors deconstructor
 }

@@ -6,14 +6,11 @@
 #include <iostream>
 #include "Data.h"
 
-using namespace std;
-
 class AI
 {
 public:
 	AI();
 	~AI();
-	
 };
 
 #endif

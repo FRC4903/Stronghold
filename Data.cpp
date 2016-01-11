@@ -7,14 +7,33 @@
 
 #include "Data.h"
 
-Data::Data() {
-	// Data constructor
-	Controls controls;
-	Sensors sensors;
-	AI brains;
-	Auto auton;
+using namespace std;
+
+
+void Data::init()
+{
+	Data::controls = new Controls();
+	Data::sensors = new Sensors();
+	Data::brains = new AI();
+	Data::auton = new Auto();
 }
 
-Data::~Data() {
-	// Data deconstructor
+Controls Data::getControls()
+{
+	return Data::controls;
+}
+
+Sensors Data::getSensors()
+{
+	return Data::sensors;
+}
+
+AI Data::getAI()
+{
+	return Data::brains;
+}
+
+Auto Data::getAuto()
+{
+	return Data::auton;
 }
