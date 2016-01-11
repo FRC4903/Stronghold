@@ -5,8 +5,9 @@
 
 using namespace std;
 
-int main() {
-	Data library;
+int main()
+{
+	Data::init();  // Initialize Data
 
 	return 0;
 }

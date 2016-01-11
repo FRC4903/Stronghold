@@ -6,11 +6,14 @@
 
 #include "AI.h"
 
-AI::AI() {
+using namespace std;
+
+AI::AI()
+{
 	// AI constructor
-	Data library;
 }
 
-AI::~AI() {
+AI::~AI()
+{
 	// AI deconstructor
 }

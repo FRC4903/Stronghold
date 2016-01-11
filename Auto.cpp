@@ -6,11 +6,14 @@
 
 #include "Auto.h"
 
-Auto::Auto() {
+using namespace std;
+
+Auto::Auto()
+{
 	// Auto constructor
-	Data library;
 }
 
-Auto::~Auto() {
+Auto::~Auto()
+{
 	// Auto deconstructor
 }
