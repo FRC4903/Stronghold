@@ -1,13 +1,12 @@
 // Sensors.h
 
-#ifndef SENSORS_H_
-#define SENSORS_H_
+#ifndef SENSORS_H
+#define SENSORS_H
 
-#include <iostream>
+#include "resources.h"
 #include "Data.h"
 
-class Sensors
-{
+class Sensors {
 public:
 	Sensors();
 	~Sensors();

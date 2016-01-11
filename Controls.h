@@ -1,13 +1,12 @@
 // Control.h
 
-#ifndef CONTROL_H_
-#define CONTROL_H_
+#ifndef CONTROL_H
+#define CONTROL_H
 
-#include <iostream>
+#include "resources.h"
 #include "Data.h"
 
-class Controls
-{
+class Controls {
 public:
 	Controls();
 	~Controls();
