@@ -6,11 +6,13 @@
 #include <iostream>
 #include "Data.h"
 
-class Controls
-{
+class Controls {
+
 public:
 	Controls();
 	~Controls();
+	void driveBase();
+	void getData();
 };
 
 #endif

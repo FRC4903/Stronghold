@@ -8,12 +8,21 @@
 
 using namespace std;
 
-Controls::Controls()
-{
+Controls::Controls() {
  	// Controls constructor
 }
 
-Controls::~Controls()
-{
+Controls::~Controls() {
 	// Controls deconstructor
+}
+
+Controls::driveBase() {
+	// Moves the base of the robot
+
+}
+
+Controls::getData() {
+	// Updates the data so all data used is consistent
+	
+
 }
