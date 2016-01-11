@@ -6,8 +6,7 @@
 #include <iostream>
 #include "Data.h"
 
-class Auto
-{
+class Auto {
 public:
 	Auto();
 	~Auto();
