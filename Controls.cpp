@@ -1,4 +1,4 @@
-test/*
+/*
  * File Name:	Controls.cpp
  * Description:	Constrols class handles output to motors and motor controllers.
  * Manager: 	Rikin Katyal

@@ -1,4 +1,4 @@
-test// main.cpp
+// main.cpp
 
 #include <iostream>
 #include "Data.h"
