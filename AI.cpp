@@ -6,8 +6,6 @@
 
 #include "AI.h"
 
-using namespace std;
-
 AI::AI()
 {
 	// AI constructor
