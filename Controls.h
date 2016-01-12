@@ -7,15 +7,15 @@
 #include "Data.h"
 
 class Controls {
-<<<<<<< HEAD
 
-=======
->>>>>>> d3a3fc683e3b0ce1c45b76618eae72ee3c28e999
 public:
 	Controls();
 	~Controls();
 	void driveBase();
 	void getData();
+	void grabBall();
+	void reverseBall();
+	void launchBall();
 };
 
 #endif

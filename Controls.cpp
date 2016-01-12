@@ -6,11 +6,8 @@
 
 #include "Controls.h"
 
-<<<<<<< HEAD
 using namespace std;
 
-=======
->>>>>>> d3a3fc683e3b0ce1c45b76618eae72ee3c28e999
 Controls::Controls() {
  	// Controls constructor
 }
@@ -24,8 +21,22 @@ Controls::driveBase() {
 
 }
 
+Controls::grabBall() {
+	// Grabs the ball in front of robot
+
+}
+
+Controls::reverseBall() {
+	// Shoots the ball out by reversing the grab ball mechanism
+	
+}
+
+Controls::launchBall() {
+	// Launches the ball using the shooting mechanism
+	
+}
+
 Controls::getData() {
 	// Updates the data so all data used is consistent
 	
-
 }
