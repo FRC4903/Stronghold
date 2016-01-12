@@ -3,19 +3,24 @@
 #ifndef CONTROL_H
 #define CONTROL_H
 
-#include "resources.h"
+#include "Resources.h"
 #include "Data.h"
 
 class Controls {
-<<<<<<< HEAD
-
-=======
->>>>>>> d3a3fc683e3b0ce1c45b76618eae72ee3c28e999
 public:
 	Controls();
 	~Controls();
+
+	/// <summary>
+	/// Output PWM signals to base drive motors.
+	/// Used to control the robot's maneuvering
+	/// </summary>
 	void driveBase();
-	void getData();
+
+	/// <summary>
+	/// Update local variables for motor outputs
+	/// </summary>
+	void update();
 };
 
 #endif

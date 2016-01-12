@@ -3,7 +3,7 @@
 #ifndef AUTO_H_
 #define AUTO_H_
 
-#include <iostream>
+#include "Resources.h"
 #include "Data.h"
 
 class Auto {

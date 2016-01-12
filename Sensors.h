@@ -3,7 +3,7 @@
 #ifndef SENSORS_H
 #define SENSORS_H
 
-#include "resources.h"
+#include "Resources.h"
 #include "Data.h"
 
 class Sensors {

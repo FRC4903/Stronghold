@@ -8,10 +8,7 @@
 #include "Data.h"
 
 void Data::init() {
-	Data::controls = new Controls();
-	Data::sensors = new Sensors();
-	Data::brains = new AI();
-	Data::auton = new Auto();
+	cout << "Initialize" << endl;
 }
 
 Controls Data::getControls() {
