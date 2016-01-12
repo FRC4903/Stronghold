@@ -1,12 +1,9 @@
 // main.cpp
 
-#include <iostream>
+#include "resources.h"
 #include "Data.h"
 
-using namespace std;
-
-int main()
-{
+int main() {
 	Data::init();  // Initialize Data
 
 	return 0;

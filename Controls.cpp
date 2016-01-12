@@ -1,13 +1,16 @@
 /*
- * File Name:	Controls.cpp
- * Description:	Constrols class handles output to motors and motor controllers.
- * Manager: 	Rikin Katyal
+ * @File:			Controls.cpp
+ * @Description:	Constrols class handles output to motors and motor controllers.
+ * @Author: 		Rikin Katyal
  */
 
 #include "Controls.h"
 
+<<<<<<< HEAD
 using namespace std;
 
+=======
+>>>>>>> d3a3fc683e3b0ce1c45b76618eae72ee3c28e999
 Controls::Controls() {
  	// Controls constructor
 }
