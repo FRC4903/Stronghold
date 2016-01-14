@@ -6,8 +6,11 @@
 
 #include "Controls.h"
 
+<<<<<<< HEAD
 using namespace std;
 
+=======
+>>>>>>> upstream/develop
 Controls::Controls() {
  	// Controls constructor
 }
@@ -16,11 +19,12 @@ Controls::~Controls() {
 	// Controls destructor
 }
 
-Controls::driveBase() {
+void Controls::driveBase() {
 	// Moves the base of the robot
 
 }
 
+<<<<<<< HEAD
 /// <summary>
 ///	Pivots the robot left, while maintaining position
 /// </summary>
@@ -60,6 +64,10 @@ Controls::launchBall() {
 ///	Lifts the triangle mechanism to lift porticullis
 /// </summary>
 Controls::liftTriangles() {
+=======
+void Controls::update() {
+	// Updates the data so all data used is consistent
+>>>>>>> upstream/develop
 	
 }
 

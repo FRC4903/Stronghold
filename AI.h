@@ -3,7 +3,7 @@
 #ifndef AI_H_
 #define AI_H_
 
-#include "resources.h"
+#include "Resources.h"
 #include "Data.h"
 
 class AI
