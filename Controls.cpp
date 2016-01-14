@@ -13,7 +13,7 @@ Controls::Controls() {
 }
 
 Controls::~Controls() {
-	// Controls deconstructor
+	// Controls destructor
 }
 
 Controls::driveBase() {
@@ -21,22 +21,58 @@ Controls::driveBase() {
 
 }
 
+/// <summary>
+///	Pivots the robot left, while maintaining position
+/// </summary>
+Controls::pivotLeft() {
+
+}
+
+/// <summary>
+///	Pivots the robot right, while maintaining position
+/// </summary>
+Controls::pivotRight() {
+
+}
+
+/// <summary>
+///	Grabs the ball in front of robot
+/// </summary>
 Controls::grabBall() {
-	// Grabs the ball in front of robot
 
 }
 
+/// <summary>
+///	Shoots the ball out by reversing the grab ball mechanism
+/// </summary>
 Controls::reverseBall() {
-	// Shoots the ball out by reversing the grab ball mechanism
 	
 }
 
+/// <summary>
+///	Launches the ball using the shooting mechanism
+/// </summary>
 Controls::launchBall() {
-	// Launches the ball using the shooting mechanism
 	
 }
 
+/// <summary>
+///	Lifts the triangle mechanism to lift porticullis
+/// </summary>
+Controls::liftTriangles() {
+	
+}
+
+/// <summary>
+///	Lowers the triangle mechanism to push down the chevel de frise
+/// </summary>
+Controls::lowerTriangles() {
+	
+}
+
+/// <summary>
+///	Updates the data so all data used is consistent
+/// </summary>
 Controls::getData() {
-	// Updates the data so all data used is consistent
 	
 }
