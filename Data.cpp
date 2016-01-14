@@ -9,13 +9,7 @@
 
 void Data::init() {
 	cout << "Initialize" << endl;
-
-	Data::controls = Controls::Controls();
-	Data::sensors = Sensors::Sensors();
-	Data::brains = AI::AI();
-	Data::auton = Auto::Auto();
 }
-
 
 Controls Data::getControls() {
 	return Data::controls;

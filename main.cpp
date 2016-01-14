@@ -1,6 +1,6 @@
 // main.cpp
 
-#include "Resources.h"
+#include "resources.h"
 #include "Data.h"
 
 int main() {
