@@ -54,6 +54,14 @@ public:
 	/// <returns>Returns public instance of AI</returns>
 	static AI getAI();
 
+	/// <summary>
+	/// Returns the status of the triangle mechanism
+	/// as a boolean, indicating if it is lowered
+	/// or not
+	/// <return>bool status of triangle being lowered</return>
+	static bool isTriagleLowered();
+
+private:
 	// Saves the position of the triangles
 	static bool triangleLowered;
 };

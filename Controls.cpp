@@ -54,9 +54,9 @@ Controls::lowerTriangles() {
 
 Controls::toggleTriangles() {
 	if (Data::trianglesLowered) {
-		liftTriangles();
+		this -> liftTriangles();
 	} else {
-		lowerTriangles();
+		this -> lowerTriangles();
 	}
 }
 
