@@ -7,19 +7,21 @@
 #include "Data.h"
 
 class Controls {
+
 public:
 	Controls();
 	~Controls();
 
-	/// <summary>
-	/// Output PWM signals to base drive motors.
-	/// Used to control the robot's maneuvering
-	/// </summary>
 	void driveBase();
+	void pivotLeft();
+	void pivotRight();
 
-	/// <summary>
-	/// Update local variables for motor outputs
-	/// </summary>
+	void grabBall();
+	void reverseBall();
+	void launchBall();
+	void liftTriangles();
+	void lowerTriangles();
+
 	void update();
 };
 
