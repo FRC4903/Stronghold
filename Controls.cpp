@@ -20,39 +20,39 @@ Controls::~Controls() {
 	// Controls destructor
 }
 
-Controls::driveBase() {
+void Controls::driveBase() {
 
 }
 
-Controls::pivotLeft() {
+void Controls::pivotLeft() {
 
 }
 
-Controls::pivotRight() {
+void Controls::pivotRight() {
 
 }
 
-Controls::grabBall() {
+void Controls::grabBall() {
 
 }
 
-Controls::reverseBall() {
+void Controls::reverseBall() {
 	
 }
 
-Controls::launchBall() {
+void Controls::launchBall() {
 	
 }
 
-Controls::liftTriangles() {
+void Controls::liftTriangles() {
 	
 }
 
-Controls::lowerTriangles() {
+void Controls::lowerTriangles() {
 	
 }
 
-Controls::toggleTriangles() {
+void Controls::toggleTriangles() {
 	if (Data::trianglesLowered) {
 		this -> liftTriangles();
 	} else {
@@ -60,6 +60,6 @@ Controls::toggleTriangles() {
 	}
 }
 
-Controls::update() {
+void Controls::update() {
 	
 }
