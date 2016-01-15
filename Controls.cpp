@@ -6,21 +6,60 @@
 
 #include "Controls.h"
 
+// Initialize Talons for drive system
+t1 = new CANTalon(DN1);
+t2 = new CANTalon(DN2);
+t3 = new CANTalon(DN3);
+t4 = new CANTalon(DN4);
+
 Controls::Controls() {
  	// Controls constructor
 }
 
 Controls::~Controls() {
-	// Controls deconstructor
+	// Controls destructor
 }
 
 void Controls::driveBase() {
-	// Moves the base of the robot
 
 }
 
-void Controls::update() {
-	// Updates the data so all data used is consistent
-	
+void Controls::pivotLeft() {
 
+}
+
+void Controls::pivotRight() {
+
+}
+
+void Controls::grabBall() {
+
+}
+
+void Controls::reverseBall() {
+	
+}
+
+void Controls::launchBall() {
+	
+}
+
+void Controls::liftTriangles() {
+	
+}
+
+void Controls::lowerTriangles() {
+	
+}
+
+void Controls::toggleTriangles() {
+	if (Data::trianglesLowered) {
+		this -> liftTriangles();
+	} else {
+		this -> lowerTriangles();
+	}
+}
+
+void Controls::update() {
+	
 }

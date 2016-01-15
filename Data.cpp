@@ -9,6 +9,7 @@
 
 void Data::init() {
 	cout << "Initialize" << endl;
+	trianglesLowered = true;
 }
 
 Controls Data::getControls() {
@@ -25,4 +26,8 @@ AI Data::getAI() {
 
 Auto Data::getAuto() {
 	return Data::auton;
+}
+
+bool Data::isTriangleLowered() {
+	return Data::trianglesLowered
 }
