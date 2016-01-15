@@ -12,7 +12,6 @@ public:
 	Controls();
 	~Controls();
 
-<<<<<<< HEAD
 	/// <summary>
 	/// Moves the base of the robot by outputing
 	/// PWM signals to the base CIM motors
@@ -58,15 +57,6 @@ public:
 	///	Lifts the triangle mechanism to lift the
 	///	porticullis defense
 	/// </summary>
-=======
-	void driveBase();
-	void pivotLeft();
-	void pivotRight();
-
-	void grabBall();
-	void reverseBall();
-	void launchBall();
->>>>>>> d36e69d42905c0183949739d6c046db35bba6af2
 	void liftTriangles();
 	
 	/// <summary>
@@ -75,7 +65,6 @@ public:
 	/// </summary>
 	void lowerTriangles();
 
-<<<<<<< HEAD
 	/// <summary>
 	///	Toggles the position of the triangle
 	///	mechanism
@@ -96,9 +85,6 @@ public:
 	CANTalon t3;
 	CANTalon t4;
 
-=======
-	void update();
->>>>>>> d36e69d42905c0183949739d6c046db35bba6af2
 };
 
 #endif
