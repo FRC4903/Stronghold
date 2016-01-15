@@ -30,7 +30,7 @@ public:
 	/// current position. Turns right wheel set 
 	/// in reverse and left wheel set forward
 	/// </summary>
-	void pivorRight();
+	void pivotRight();
 
 	/// <summary>
 	/// Turns the wheels on the grabbing mechanism
