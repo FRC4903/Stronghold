@@ -9,6 +9,7 @@
 
 void Data::init() {
 	cout << "Initialize" << endl;
+	trianglesLowered = true;
 }
 
 Controls Data::getControls() {

@@ -53,6 +53,9 @@ public:
 	/// </summary>
 	/// <returns>Returns public instance of AI</returns>
 	static AI getAI();
+
+	// Saves the position of the triangles
+	static bool triangleLowered;
 };
 
 #endif
