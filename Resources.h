@@ -3,6 +3,8 @@
 
 #include <iostream>
 
+#include "WPILib.h"
+
 using namespace std;
 
 #endif
