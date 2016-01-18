@@ -6,14 +6,22 @@
 
 #include "Controls.h"
 
-// Initialize Talons for drive system
-t1 = new CANTalon(DN1);
-t2 = new CANTalon(DN2);
-t3 = new CANTalon(DN3);
-t4 = new CANTalon(DN4);
 
 Controls::Controls() {
  	// Controls constructor
+ 	
+ 	// Get variables from Data class
+ 	this -> update();
+
+ 	// Initialize Talons for drive system
+ 	t1 = new CANTalon(DN1);
+ 	t2 = new CANTalon(DN2);
+ 	t3 = new CANTalon(DN3);
+ 	t4 = new CANTalon(DN4);
+
+ 	// Set starting variables
+ 	trianglesLowered = false;
+
 }
 
 Controls::~Controls() {
