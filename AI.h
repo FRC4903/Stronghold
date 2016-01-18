@@ -11,6 +11,9 @@ class AI
 public:
 	AI();
 	~AI();
+
+private:
+	Data *library;
 };
 
 #endif

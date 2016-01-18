@@ -9,18 +9,14 @@
 #include "Auto.h"
 #include "AI.h"
 
-class Data {
-	static Controls controls;
-	static Sensors	sensors;
-	static AI		brains;
-	static Auto		auton;
-
+class Data
+{
 public:
 	/// <summary>
 	/// Initialize variables and objects within the data class.
 	/// It is used in place of a Constructor
 	/// </summary>
-	static void init();
+	Data();
 
 	/// <summary>
 	/// Public access to Sensors class.
@@ -28,7 +24,7 @@ public:
 	/// public methods from Sensors
 	/// </summary>
 	/// <returns>Returns public instance of Sensors</returns>
-	static Sensors getSensors();
+	Sensors getSensors();
 
 	/// <summary>
 	/// Public access to Auto class.
@@ -36,7 +32,7 @@ public:
 	/// public methods from Auto
 	/// </summary>
 	/// <returns>Returns public instance of Auto</returns>
-	static Auto getAuto();
+	Auto getAuto();
 
 	/// <summary>
 	/// Public access to Controls class.
@@ -44,7 +40,7 @@ public:
 	/// public methods from Controls
 	/// </summary>
 	/// <returns>Returns public instance of Controls</returns>
-	static Controls getControls();
+	Controls getControls();
 
 	/// <summary>
 	/// Public access to AI class.
@@ -52,8 +48,13 @@ public:
 	/// public methods from AI
 	/// </summary>
 	/// <returns>Returns public instance of AI</returns>
-	static AI getAI();
+	AI getAI();
 
+private:
+	Controls controls;
+	Sensors	 sensors;
+	AI		 brains;
+	Auto	 auton;
 };
 
 #endif

@@ -7,10 +7,12 @@
 
 #include "AI.h"
 
-AI::AI() {
-	// AI constructor
+AI::AI()
+{
+	library = &getLibrary();
 }
 
-AI::~AI() {
+AI::~AI()
+{
 	// AI deconstructor
 }

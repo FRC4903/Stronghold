@@ -6,10 +6,12 @@
 
 #include "Auto.h"
 
-Auto::Auto() {
-	// Auto constructor
+Auto::Auto()
+{
+	library = &getLibrary();
 }
 
-Auto::~Auto() {
+Auto::~Auto()
+{
 	// Auto deconstructor
 }

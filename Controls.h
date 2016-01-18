@@ -6,8 +6,8 @@
 #include "Resources.h"
 #include "Data.h"
 
-class Controls {
-
+class Controls
+{
 public:
 	Controls();
 	~Controls();
@@ -86,6 +86,9 @@ public:
 	CANTalon t4;
 
 	bool trianglesLowered;
+
+private:
+	Data *library;
 
 };
 
