@@ -85,6 +85,8 @@ public:
 	CANTalon t3;
 	CANTalon t4;
 
+	bool trianglesLowered;
+
 };
 
 #endif

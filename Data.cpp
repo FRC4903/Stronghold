@@ -27,7 +27,3 @@ AI Data::getAI() {
 Auto Data::getAuto() {
 	return Data::auton;
 }
-
-bool Data::isTriangleLowered() {
-	return Data::trianglesLowered
-}
