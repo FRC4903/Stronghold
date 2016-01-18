@@ -14,10 +14,10 @@ Controls::Controls() {
  	this -> update();
 
  	// Initialize Talons for drive system
- 	t1 = new CANTalon(DN1);
- 	t2 = new CANTalon(DN2);
- 	t3 = new CANTalon(DN3);
- 	t4 = new CANTalon(DN4);
+ 	t1 = CANTalon(DN1);
+ 	t2 = CANTalon(DN2);
+ 	t3 = CANTalon(DN3);
+ 	t4 = CANTalon(DN4);
 
  	// Set starting variables
  	trianglesLowered = false;
