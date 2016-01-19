@@ -8,10 +8,12 @@
 
 #include "Sensors.h"
 
-Sensors::Sensors() {
-	// Sensors constructor
+Sensors::Sensors()
+{
+	library = &getLibrary();
 }
 
-Sensors::~Sensors() {
+Sensors::~Sensors()
+{
 	// Sensors deconstructor
 }

@@ -6,10 +6,14 @@
 #include "Resources.h"
 #include "Data.h"
 
-class Sensors {
+class Sensors
+{
 public:
 	Sensors();
 	~Sensors();
+
+private:
+	Data *library;
 };
 
 #endif

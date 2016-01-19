@@ -7,8 +7,9 @@
 #include "Controls.h"
 
 
-Controls::Controls() {
- 	// Controls constructor
+Controls::Controls()
+{
+	library = &getLibrary();
  	
  	// Get variables from Data class
  	this -> update();
@@ -24,50 +25,64 @@ Controls::Controls() {
 
 }
 
-Controls::~Controls() {
+Controls::~Controls()
+{
 	// Controls destructor
 }
 
-void Controls::driveBase() {
+void Controls::driveBase()
+{
 
 }
 
-void Controls::pivotLeft() {
+void Controls::pivotLeft()
+{
 
 }
 
-void Controls::pivotRight() {
+void Controls::pivotRight()
+{
 
 }
 
-void Controls::grabBall() {
+void Controls::grabBall()
+{
 
 }
 
-void Controls::reverseBall() {
+void Controls::reverseBall()
+{
 	
 }
 
-void Controls::launchBall() {
+void Controls::launchBall()
+{
 	
 }
 
-void Controls::liftTriangles() {
+void Controls::liftTriangles()
+{
 	
 }
 
-void Controls::lowerTriangles() {
+void Controls::lowerTriangles()
+{
 	
 }
 
-void Controls::toggleTriangles() {
-	if (Data::trianglesLowered) {
+void Controls::toggleTriangles()
+{
+	if (trianglesLowered)
+	{
 		this -> liftTriangles();
-	} else {
+	}
+	else
+	{
 		this -> lowerTriangles();
 	}
 }
 
-void Controls::update() {
+void Controls::update()
+{
 	
 }

@@ -6,10 +6,14 @@
 #include "Resources.h"
 #include "Data.h"
 
-class Auto {
+class Auto
+{
 public:
 	Auto();
 	~Auto();
+
+private:
+	Data *library;
 };
 
 #endif
