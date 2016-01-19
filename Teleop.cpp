@@ -11,6 +11,6 @@ Teleop::Teleop() {
 	// Teleop constructor
 }
 
-~Teleop::Teleop() {
+Teleop::~Teleop() {
 	// Teleop deconstructor
 }
