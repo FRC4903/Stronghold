@@ -13,6 +13,7 @@ Data::Data()
 	sensors = Sensors();
 	brains = AI();
 	auton = Auto();
+	tele = Teleop();
 }
 
 Controls Data::getControls()
@@ -33,4 +34,9 @@ AI Data::getAI()
 Auto Data::getAuto()
 {
 	return auton;
+}
+
+Teleop Data::getTele()
+{
+	return tele;
 }

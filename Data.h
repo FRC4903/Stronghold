@@ -6,6 +6,7 @@
 #include "Resources.h"
 #include "Controls.h"
 #include "Sensors.h"
+#include "Teleop.h"
 #include "Auto.h"
 #include "AI.h"
 
@@ -50,11 +51,20 @@ public:
 	/// <returns>Returns public instance of AI</returns>
 	AI getAI();
 
+	/// <summary>
+	/// Public access to Teleop class.
+	/// Allows other classes to access
+	/// public methods from Teleop
+	/// </summary>
+	/// <returns>Returns public instance of Teleop</returns>
+	Teleop getTele();
+
 private:
 	Controls controls;
 	Sensors	 sensors;
 	AI	 brains;
 	Auto	 auton;
+	Teleop	tele;
 };
 
 #endif
