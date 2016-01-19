@@ -54,14 +54,17 @@ public:
 		//std::string autoSelected = SmartDashboard::GetString("Auto Selector", autoNameDefault);
 		std::cout << "Auto selected: " << autoSelected << std::endl;
 
-		if(autoSelected == autoNameCustom){
+		if(autoSelected == autoNameCustom)
+		{
 			//Custom Auto goes here
 			std::cout << "Running custom Autonomous" << std::endl;
 			myRobot.SetSafetyEnabled(false);
 			myRobot.Drive(-0.5, 1.0); 	// spin at half speed
 			Wait(2.0); 				//    for 2 seconds
 			myRobot.Drive(0.0, 0.0); 	// stop robot
-		} else {
+		}
+		else
+		{
 			//Default Auto goes here
 			std::cout << "Running default Autonomous" << std::endl;
 			myRobot.SetSafetyEnabled(false);

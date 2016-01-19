@@ -9,6 +9,9 @@ class Teleop {
 public:
 	Teleop();
 	~Teleop();
+
+private:
+	Data *library;
 };
 
 
