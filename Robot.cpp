@@ -1,99 +1,88 @@
+#include "WPILib.h"
+#include "Commands/Command.h"
+#include "Commands/ExampleCommand.h"
+#include "CommandBase.h"
 #include "Resources.h"
-#include "Data.h"
 
-/**
- * This is a demo program showing the use of the RobotDrive class.
- * The SampleRobot class is the base of a robot application that will automatically call your
- * Autonomous and OperatorControl methods at the right time as controlled by the switches on
- * the driver station or the field controls.
- *
- * WARNING: While it may look like a good choice to use for your code if you're inexperienced,
- * don't. Unless you know what you are doing, complex code will be much more difficult under
- * this system. Use IterativeRobot or Command-Based instead if you're new.
- */
-class Robot: public SampleRobot
+class Robot: public IterativeRobot
 {
-	Data *library;
-	RobotDrive myRobot; // robot drive system
-	Joystick stick; // only joystick
+private:
+	std::unique_ptr<Command> autonomousCommand;
 	SendableChooser *chooser;
-	const string autoNameDefault = "Default";
-	const string autoNameCustom = "My Auto";
-
-public:
-	Robot() :
-			myRobot(0, 1),	// these must be initialized in the same order
-			stick(0),		// as they are declared above.
-			chooser()
-	{
-		//Note SmartDashboard is not initialized here, wait until RobotInit to make SmartDashboard calls
-		myRobot.SetExpiration(0.1);
-	}
 
 	void RobotInit()
 	{
-		library = &getLibrary();  // Point to address of global library
+		CommandBase::init();
 		chooser = new SendableChooser();
-		chooser->AddDefault(autoNameDefault, (void*)&autoNameDefault);
-		chooser->AddObject(autoNameCustom, (void*)&autoNameCustom);
+		chooser->AddDefault("Default Auto", new ExampleCommand());
+		//chooser->AddObject("My Auto", new MyAutoCommand());
 		SmartDashboard::PutData("Auto Modes", chooser);
+		Data *library = &getLibrary();
+	}
+
+	/**
+     * This function is called once each time the robot enters Disabled mode.
+     * You can use it to reset any subsystem information you want to clear when
+	 * the robot is disabled.
+     */
+	void DisabledInit()
+	{
+	}
+
+	void DisabledPeriodic()
+	{
+		Scheduler::GetInstance()->Run();
 	}
 
 	/**
 	 * This autonomous (along with the chooser code above) shows how to select between different autonomous modes
 	 * using the dashboard. The sendable chooser code works with the Java SmartDashboard. If you prefer the LabVIEW
-	 * Dashboard, remove all of the chooser code and uncomment the GetString line to get the auto name from the text box
+	 * Dashboard, remove all of the chooser code and uncomment the GetString code to get the auto name from the text box
 	 * below the Gyro
 	 *
-	 * You can add additional auto modes by adding additional comparisons to the if-else structure below with additional strings.
-	 * If using the SendableChooser make sure to add them to the chooser code above as well.
+	 * You can add additional auto modes by adding additional commands to the chooser code above (like the commented example)
+	 * or additional comparisons to the if-else structure below with additional strings & commands.
 	 */
-	void Autonomous()
+	void AutonomousInit()
 	{
-		std::string autoSelected = *((std::string*)chooser->GetSelected());
-		//std::string autoSelected = SmartDashboard::GetString("Auto Selector", autoNameDefault);
-		std::cout << "Auto selected: " << autoSelected << std::endl;
+		/* std::string autoSelected = SmartDashboard::GetString("Auto Selector", "Default");
+		if(autoSelected == "My Auto") {
+			autonomousCommand.reset(new MyAutoCommand());
+		} else {
+			autonomousCommand.reset(new ExampleCommand());
+		} */
 
-		if(autoSelected == autoNameCustom)
-		{
-			//Custom Auto goes here
-			std::cout << "Running custom Autonomous" << std::endl;
-			myRobot.SetSafetyEnabled(false);
-			myRobot.Drive(-0.5, 1.0); 	// spin at half speed
-			Wait(2.0); 				//    for 2 seconds
-			myRobot.Drive(0.0, 0.0); 	// stop robot
-		}
-		else
-		{
-			//Default Auto goes here
-			std::cout << "Running default Autonomous" << std::endl;
-			myRobot.SetSafetyEnabled(false);
-			myRobot.Drive(-0.5, 0.0); 	// drive forwards half speed
-			Wait(2.0); 				//    for 2 seconds
-			myRobot.Drive(0.0, 0.0); 	// stop robot
-		}
+		autonomousCommand.reset((Command *)chooser->GetSelected());
 
+		if (autonomousCommand != NULL)
+			autonomousCommand->Start();
 	}
 
-	/**
-	 * Runs the motors with arcade steering.
-	 */
-	void OperatorControl()
+	void AutonomousPeriodic()
 	{
-		myRobot.SetSafetyEnabled(true);
-		while (IsOperatorControl() && IsEnabled())
-		{
-			myRobot.ArcadeDrive(stick); // drive with arcade style (use right stick)
-			Wait(0.005);				// wait for a motor update time
-		}
+		Scheduler::GetInstance()->Run();
 	}
 
-	/**
-	 * Runs during test mode
-	 */
-	void Test()
+	void TeleopInit()
 	{
+		// This makes sure that the autonomous stops running when
+		// teleop starts running. If you want the autonomous to
+		// continue until interrupted by another command, remove
+		// this line or comment it out.
+		if (autonomousCommand != NULL)
+			autonomousCommand->Cancel();
+	}
+
+	void TeleopPeriodic()
+	{
+		Scheduler::GetInstance()->Run();
+	}
+
+	void TestPeriodic()
+	{
+		LiveWindow::GetInstance()->Run();
 	}
 };
 
 START_ROBOT_CLASS(Robot)
+
