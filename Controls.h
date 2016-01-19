@@ -87,6 +87,11 @@ public:
 
 	bool trianglesLowered;
 
+	double speed1;
+	double speed2;
+	double speed3;
+	double speed4;
+
 private:
 	Data *library;
 
