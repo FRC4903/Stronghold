@@ -7,7 +7,7 @@
 #include "Controls.h"
 
 
-Controls::Controls()
+Controls::Controls() 
 {
 	library = &getLibrary();
  	
@@ -25,52 +25,52 @@ Controls::Controls()
 
 }
 
-Controls::~Controls()
+Controls::~Controls() 
 {
 	// Controls destructor
 }
 
-void Controls::driveBase()
+void Controls::driveBase() 
 {
 
 }
 
-void Controls::pivotLeft()
+void Controls::pivotLeft() 
 {
 
 }
 
-void Controls::pivotRight()
+void Controls::pivotRight() 
 {
 
 }
 
-void Controls::grabBall()
+void Controls::grabBall() 
 {
 
 }
 
-void Controls::reverseBall()
-{
-	
-}
-
-void Controls::launchBall()
+void Controls::reverseBall() 
 {
 	
 }
 
-void Controls::liftTriangles()
+void Controls::launchBall() 
 {
 	
 }
 
-void Controls::lowerTriangles()
+void Controls::liftTriangles() 
 {
 	
 }
 
-void Controls::toggleTriangles()
+void Controls::lowerTriangles() 
+{
+	
+}
+
+void Controls::toggleTriangles() 
 {
 	if (trianglesLowered)
 	{
@@ -82,7 +82,7 @@ void Controls::toggleTriangles()
 	}
 }
 
-void Controls::update()
+void Controls::update() 
 {
 	
 }
