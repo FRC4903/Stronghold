@@ -9,7 +9,7 @@ class Teleop {
 public:
 	Teleop();
 	~Teleop();
-}
+};
 
 
 #endif
