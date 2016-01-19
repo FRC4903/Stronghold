@@ -64,7 +64,7 @@ private:
 	Sensors	 sensors;
 	AI	 brains;
 	Auto	 auton;
-	Teleop	tele;
+	Teleop	 tele;
 };
 
 #endif
