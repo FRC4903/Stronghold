@@ -9,6 +9,7 @@
 
 Teleop::Teleop() {
 	// Teleop constructor
+	library = &getLibrary();
 }
 
 Teleop::~Teleop() {
