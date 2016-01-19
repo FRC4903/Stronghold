@@ -53,7 +53,7 @@ public:
 private:
 	Controls controls;
 	Sensors	 sensors;
-	AI		 brains;
+	AI	 brains;
 	Auto	 auton;
 };
 
