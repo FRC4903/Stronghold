@@ -84,7 +84,7 @@ public:
 	void resetSpeed();
 
 	/// <summary>
-	/// Sets the CANalon values for the drive system based on each speed
+	/// Sets the Talon values for the drive system based on each speed
 	/// </summary>
 	void setDriveTalons(double speed1, double speed2, double speed3, double speed4);
 
@@ -102,10 +102,10 @@ public:
 	
 
 	// Talons
-	CANTalon talon1;
-	CANTalon talon2;
-	CANTalon talon3;
-	CANTalon talon4;
+	Talon talon1;
+	Talon talon2;
+	Talon talon3;
+	Talon talon4;
 
 	bool trianglesLowered;
 

@@ -117,6 +117,6 @@ void Controls::setDriveTalons(double speed1, double speed2, double speed3, doubl
 	setTalon(library::getTalon(library::BACK_R), speed4);
 }
 
-void Controls::setTalon(CANTalon talon, double value) {
+void Controls::setTalon(Talon talon, double value) {
 	talon.Set(value);
 }
