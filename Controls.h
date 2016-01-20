@@ -77,13 +77,18 @@ public:
 	/// outputs
 	/// </summary>
 	void update();
+
+	/// <summary>
+	/// Resets the speed of each talon to 0
+	/// </summary>
+	void resetSpeed();
 	
 
 	// Talons
-	CANTalon t1;
-	CANTalon t2;
-	CANTalon t3;
-	CANTalon t4;
+	CANTalon talon1;
+	CANTalon talon2;
+	CANTalon talon3;
+	CANTalon talon4;
 
 	bool trianglesLowered;
 
