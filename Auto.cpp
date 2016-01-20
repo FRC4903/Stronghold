@@ -6,8 +6,7 @@
 
 #include "Auto.h"
 
-Auto::Auto()
-{
+Auto::Auto() {
 	library = &getLibrary();
 }
 

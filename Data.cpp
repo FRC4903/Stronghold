@@ -7,8 +7,7 @@
 
 #include "Data.h"
 
-Data::Data()
-{
+Data::Data() {
 	controls = Controls();
 	sensors = Sensors();
 	brains = AI();
@@ -16,27 +15,35 @@ Data::Data()
 	tele = Teleop();
 }
 
-Controls Data::getControls()
-{
+Controls Data::getControls() {
 	return controls;
 }
 
-Sensors Data::getSensors()
-{
+Sensors Data::getSensors() {
 	return sensors;
 }
 
-AI Data::getAI()
-{
+AI Data::getAI() {
 	return brains;
 }
 
-Auto Data::getAuto()
-{
+Auto Data::getAuto() {
 	return auton;
 }
 
-Teleop Data::getTele()
-{
+Teleop Data::getTele() {
 	return tele;
+}
+
+CANTalon::CANTalon Data::getTalon(int motor) {
+	switch(motor) {
+		case FRONT_L:
+			return talons[FRONT_L];
+		case FRONT_R:
+			return talons[FRONT_R];
+		case BACK_L:
+			return talons[BACK_L];
+		case BACK_R:
+			return talons[BACK_R];
+	} return NULL;
 }

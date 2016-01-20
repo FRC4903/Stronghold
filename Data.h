@@ -1,5 +1,4 @@
 // Data.h
-
 #ifndef DATA_H
 #define DATA_H
 
@@ -10,9 +9,22 @@
 #include "Auto.h"
 #include "AI.h"
 
-class Data
-{
+class Data {
+	Controls controls;
+	Sensors	sensors;
+	AI brains;
+	Auto auton;
+	Teleop tele;
+
+	int talonIDs[] = {3241,3455,2312,2345};
+	CANTalon::CANTalon talons[] = {CANTalon::CANTalon(talonIDs[0]), CANTalon::CANTalon(talonIDs[1]), 
+								   CANTalon::CANTalon(talonIDs[2]), CANTalon::CANTalon(talonIDs[3])};
+
 public:
+	enum Talon {
+		FRONT_L, FRONT_R, BACK_L, BACK_R;
+	};
+
 	/// <summary>
 	/// Initialize variables and objects within the data class.
 	/// It is used in place of a Constructor
@@ -59,12 +71,13 @@ public:
 	/// <returns>Returns public instance of Teleop</returns>
 	Teleop getTele();
 
-private:
-	Controls controls;
-	Sensors	 sensors;
-	AI	 brains;
-	Auto	 auton;
-	Teleop	 tele;
+	/// <summary>
+	/// Public access to all talons connected to the robot.
+	/// </summary>
+	/// <returns>Returns private instance of CANTalon</returns>
+	CANTalon::CANTalon getTalon(int motor) {
+	}
+
 };
 
 #endif
