@@ -2,6 +2,7 @@
 #ifndef DATA_H
 #define DATA_H
 
+#include "Resources.h"
 #include "Controls.h"
 #include "Sensors.h"
 #include "Teleop.h"
