@@ -83,8 +83,7 @@ public:
 	/// Public access to all talons connected to the robot.
 	/// </summary>
 	/// <returns>Returns private instance of CANTalon</returns>
-	CANTalon::CANTalon getTalon(int motor) {
-	}
+	CANTalon::CANTalon getTalon(int motor);
 
 };
 
