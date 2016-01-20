@@ -7,8 +7,7 @@
 
 #include "Data.h"
 
-Data::Data()
-{
+Data::Data() {
 	controls = Controls();
 	sensors = Sensors();
 	brains = AI();

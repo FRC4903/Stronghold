@@ -3,14 +3,13 @@
 
 #include <iostream>
 #include "Data.h"
-#include "WPILib.h"
+// #include "WPILib.h"
 
 using namespace std;
 
 Data library = Data();
 
-Data getLibrary()
-{
+Data getLibrary() {
 	return library;
 }
 

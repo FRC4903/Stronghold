@@ -1,17 +1,20 @@
 // Data.h
-
 #ifndef DATA_H
 #define DATA_H
 
-#include "Resources.h"
 #include "Controls.h"
 #include "Sensors.h"
 #include "Teleop.h"
 #include "Auto.h"
 #include "AI.h"
 
-class Data
-{
+class Data {
+	Controls controls;
+	Sensors	sensors;
+	AI brains;
+	Auto auton;
+	Teleop tele;
+
 public:
 	/// <summary>
 	/// Initialize variables and objects within the data class.
@@ -59,12 +62,6 @@ public:
 	/// <returns>Returns public instance of Teleop</returns>
 	Teleop getTele();
 
-private:
-	Controls controls;
-	Sensors	 sensors;
-	AI	 brains;
-	Auto	 auton;
-	Teleop	 tele;
 };
 
 #endif
