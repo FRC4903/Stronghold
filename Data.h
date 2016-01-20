@@ -16,13 +16,21 @@ class Data {
 	Auto auton;
 	Teleop tele;
 
-	int talonIDs[] = {3241,3455,2312,2345};
-	CANTalon::CANTalon talons[] = {CANTalon::CANTalon(talonIDs[0]), CANTalon::CANTalon(talonIDs[1]), 
-								   CANTalon::CANTalon(talonIDs[2]), CANTalon::CANTalon(talonIDs[3])};
+	int talonIDs[] = {1, 2, 3, 4};
+
+	CANTalon::CANTalon talons[] = {
+		CANTalon::CANTalon(talonIDs[0]),
+		CANTalon::CANTalon(talonIDs[1]),
+		CANTalon::CANTalon(talonIDs[2]),
+		CANTalon::CANTalon(talonIDs[3])
+	};
 
 public:
 	enum Talon {
-		FRONT_L, FRONT_R, BACK_L, BACK_R;
+		FRONT_L,
+		FRONT_R,
+		BACK_L,
+		BACK_R
 	};
 
 	/// <summary>

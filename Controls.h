@@ -16,7 +16,7 @@ public:
 	/// Moves the base of the robot by outputing
 	/// PWM signals to the base CIM motors
 	/// </summary>
-	void driveBase();
+	void driveBase(int x, int y);
 
 	/// <summary>
 	/// Pivots the robot left, while maintaining
@@ -82,6 +82,23 @@ public:
 	/// Resets the speed of each talon to 0
 	/// </summary>
 	void resetSpeed();
+
+	/// <summary>
+	/// Sets the CANalon values for the drive system based on each speed
+	/// </summary>
+	void setDriveTalons(double speed1, double speed2, double speed3, double speed4);
+
+	/// <summary>
+	/// Sets the CANTalon value to the value passed
+	/// in
+	/// </summary>
+	void setTalon(CANTalon talon, double value);
+
+	/// <summary>
+	/// Sets the Talon value to the value passed
+	/// in
+	/// </summary>
+	void setTalon(Talon talon, double value);
 	
 
 	// Talons
