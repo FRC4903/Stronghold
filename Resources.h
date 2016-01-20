@@ -4,6 +4,7 @@
 #include <iostream>
 #include "Data.h"
 #include "WPILib.h"
+#include "CANTalon.h"
 
 using namespace std;
 
