@@ -11,7 +11,7 @@ Controls::Controls() {
 	library = &getLibrary();
  	
  	// Get variables from Data class
- 	this -> update();
+ 	update();
 
  	// Initialize Talons for drive system
  	talon1 = CANTalon(DN1);
@@ -22,7 +22,7 @@ Controls::Controls() {
  	// Set starting variables
  	trianglesLowered = false;
 
- 	this -> resetSpeed();
+ 	resetSpeed();
 
 }
 
@@ -33,7 +33,7 @@ Controls::~Controls() {
 void Controls::driveBase(int x, int y) {
 
 	// Get variables from Data class
-	this -> update();
+	update();
 
 	// Driving base left/right
 	if (x != 0) {
@@ -54,10 +54,10 @@ void Controls::driveBase(int x, int y) {
 	}
 
 	// Sets the talons for the base
-	this -> setDriveTalons(speed1, speed2, speed3, speed4);
+	setDriveTalons(speed1, speed2, speed3, speed4);
 
 	// reset speeds to 0
-	this -> resetSpeed();
+	resetSpeed();
 
 }
 
@@ -91,10 +91,10 @@ void Controls::lowerTriangles() {
 
 void Controls::toggleTriangles() {
 	if (trianglesLowered) {
-		this -> liftTriangles();
+		liftTriangles();
 	}
 	else {
-		this -> lowerTriangles();
+		lowerTriangles();
 	}
 }
 
@@ -111,10 +111,10 @@ void Controls::resetSpeed() {
 
 void Controls::setDriveTalons(double speed1, double speed2, double speed3, double speed4) {
 	// Sets the talons for the base
-	this -> setTalon(library::getTalon(library::FRONT_L), speed1);
-	this -> setTalon(library::getTalon(library::FRONT_R), speed2);
-	this -> setTalon(library::getTalon(library::BACK_L), speed3);
-	this -> setTalon(library::getTalon(library::BACK_R), speed4);
+	setTalon(library::getTalon(library::FRONT_L), speed1);
+	setTalon(library::getTalon(library::FRONT_R), speed2);
+	setTalon(library::getTalon(library::BACK_L), speed3);
+	setTalon(library::getTalon(library::BACK_R), speed4);
 }
 
 void Controls::setTalon(CANTalon talon, double value) {
