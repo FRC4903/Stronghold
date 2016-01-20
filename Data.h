@@ -8,8 +8,6 @@
 #include "Auto.h"
 #include "AI.h"
 
-#include "CANTalon.h"		
-
 class Data {
 	Controls controls;
 	Sensors	sensors;
