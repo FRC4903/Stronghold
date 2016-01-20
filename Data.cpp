@@ -45,5 +45,7 @@ CANTalon::CANTalon Data::getTalon(int motor) {
 			return talons[BACK_L];
 		case BACK_R:
 			return talons[BACK_R];
-	} return NULL;
+		default:
+			return NULL;
+	}
 }

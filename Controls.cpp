@@ -22,10 +22,7 @@ Controls::Controls() {
  	// Set starting variables
  	trianglesLowered = false;
 
- 	speed1 = 0;
- 	speed2 = 0;
- 	speed3 = 0;
- 	speed4 = 0;
+ 	this -> resetSpeed();
 
 }
 
@@ -56,7 +53,8 @@ void Controls::driveBase(int x, int y) {
 		speed4 += y / 2.0;
 	}
 
-	// set talons here
+	// Sets the talons for the base
+	this -> setDriveTalons(speed1, speed2, speed3, speed4);
 
 	// reset speeds to 0
 	this -> resetSpeed();
@@ -109,4 +107,16 @@ void Controls::resetSpeed() {
 	speed2 = 0;
 	speed3 = 0;
 	speed4 = 0;
+}
+
+void Controls::setDriveTalons(double speed1, double speed2, double speed3, double speed4) {
+	// Sets the talons for the base
+	this -> setTalon(library::getTalon(library::FRONT_L), speed1);
+	this -> setTalon(library::getTalon(library::FRONT_R), speed2);
+	this -> setTalon(library::getTalon(library::BACK_L), speed3);
+	this -> setTalon(library::getTalon(library::BACK_R), speed4);
+}
+
+void Controls::setTalon(CANTalon talon, double value) {
+	talon.Set(value);
 }
