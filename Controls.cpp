@@ -56,6 +56,8 @@ void Controls::driveBase(int x, int y) {
 		speed4 += y / 2.0;
 	}
 
+	// set talons here
+
 	// reset speeds to 0
 	this -> resetSpeed();
 
