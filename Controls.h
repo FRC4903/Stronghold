@@ -109,6 +109,7 @@ public:
 
 	bool trianglesLowered;
 
+	// Speed of each drive Talon
 	double speed1;
 	double speed2;
 	double speed3;
