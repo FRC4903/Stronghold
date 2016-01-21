@@ -13,12 +13,6 @@ Controls::Controls() {
  	// Get variables from Data class
  	update();
 
- 	// Initialize Talons for drive system
- 	talon1 = CANTalon(DN1);
- 	talon2 = CANTalon(DN2);
- 	talon3 = CANTalon(DN3);
- 	talon4 = CANTalon(DN4);
-
  	// Set starting variables
  	trianglesLowered = false;
 
@@ -118,5 +112,9 @@ void Controls::setDriveTalons(double speed1, double speed2, double speed3, doubl
 }
 
 void Controls::setTalon(Talon talon, double value) {
+	talon.Set(value);
+}
+
+void Controls::setTalon(CANTalon talon, double value) {
 	talon.Set(value);
 }
