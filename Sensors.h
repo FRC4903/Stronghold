@@ -1,19 +1,29 @@
 // Sensors.h
 
-#ifndef SENSORS_H
-#define SENSORS_H
+#ifndef SENSORS_H_
+#define SENSORS_H_
 
-#include "Resources.h"
+#include <Joystick.h>
+
+#include <iostream>
+
 #include "Data.h"
 
 class Sensors
 {
-public:
-	Sensors();
-	~Sensors();
+	private:
+		Joystick base_control;
+	public:
+		Sensors();
+		// constructor
+		~Sensors();
+		// destructor
 
-private:
-	Data *library;
+		// these methods get the user input for the base controls
+		double getBaseMovementInputX();
+		// returns: X-axis
+		double getBaseMovementInputY();
+		// returns: Y-axis
 };
 
 #endif
