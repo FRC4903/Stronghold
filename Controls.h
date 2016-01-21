@@ -99,7 +99,9 @@ public:
 	/// in
 	/// </summary>
 	void setTalon(Talon talon, double value);
-	
+
+private:
+	Data *library;
 
 	// Talons
 	Talon talon1;
@@ -114,10 +116,6 @@ public:
 	double speed2;
 	double speed3;
 	double speed4;
-
-private:
-	Data *library;
-
 };
 
 #endif
