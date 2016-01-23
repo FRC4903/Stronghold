@@ -8,7 +8,7 @@
 
 
 Controls::Controls() {
-	library = &getLibrary();
+	library = &conjure::getLibrary();
  	
  	// Get variables from Data class
  	update();

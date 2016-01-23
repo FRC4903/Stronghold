@@ -9,6 +9,7 @@ class Robot: public IterativeRobot
 private:
 	std::unique_ptr<Command> autonomousCommand;
 	SendableChooser *chooser;
+	Data *library;
 
 	void RobotInit()
 	{
@@ -17,7 +18,7 @@ private:
 		chooser->AddDefault("Default Auto", new ExampleCommand());
 		//chooser->AddObject("My Auto", new MyAutoCommand());
 		SmartDashboard::PutData("Auto Modes", chooser);
-		Data *library = &getLibrary();
+		library = &conjure::getLibrary();
 	}
 
 	/**
@@ -76,7 +77,7 @@ private:
 	void TeleopPeriodic()
 	{
 		Scheduler::GetInstance()->Run();
-		// Call Teleop run here
+		// Call Teleop run here. Access Teleop through library
 	}
 
 	void TestPeriodic()
