@@ -9,7 +9,7 @@
 
 AI::AI()
 {
-	library = &getLibrary();
+	library = &conjure::getLibrary();
 }
 
 AI::~AI()

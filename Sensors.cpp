@@ -15,6 +15,7 @@
  {
  	// Sensors constructor
  	base_control = new Joystick(0);
+	library = &conjure::getLibrary();
  }
 
  Sensors::~Sensors()

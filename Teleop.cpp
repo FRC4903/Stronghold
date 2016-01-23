@@ -9,7 +9,7 @@
 
 Teleop::Teleop() {
 	// Teleop constructor
-	library = &getLibrary();
+	library = &conjure::getLibrary();
 }
 
 Teleop::~Teleop() {
