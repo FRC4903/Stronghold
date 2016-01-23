@@ -1,9 +1,9 @@
 /*
- * File Name:	Sensors.cpp
- * Description:	Sensors class handles all input from various sensors and inputs.
+ * @File:	Sensors.cpp
+ * @Description:	Sensors class handles all input from various sensors and inputs.
  *				All input values can be accesed via methods contained in this class
  *				For more descriptive comments, look in the header file
- * Manager:			Roman S.
+ * @Author:			Roman S.
  *
  */
 

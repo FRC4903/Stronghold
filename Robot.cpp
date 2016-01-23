@@ -76,6 +76,7 @@ private:
 	void TeleopPeriodic()
 	{
 		Scheduler::GetInstance()->Run();
+		// Call Teleop run here
 	}
 
 	void TestPeriodic()

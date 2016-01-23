@@ -10,6 +10,11 @@ public:
 	Teleop();
 	~Teleop();
 
+	/// <summary>
+	/// Runs the teleop code
+	/// </summary>
+	void run();
+
 private:
 	Data *library;
 };
