@@ -15,3 +15,7 @@ Teleop::Teleop() {
 Teleop::~Teleop() {
 	// Teleop deconstructor
 }
+
+void Teleop::run() {
+	library.getControls().driveBase(library.getSensors().getBaseMovementInputX(), library.getSensors().getBaseMovementInputY());
+}
