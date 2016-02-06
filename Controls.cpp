@@ -8,7 +8,7 @@
 
 
 Controls::Controls() {
-	library = &getLibrary();
+	library = Data::getInstance();
  	
  	// Get variables from Data class
  	update();
@@ -26,25 +26,27 @@ Controls::~Controls() {
 
 void Controls::driveBase(int x, int y) {
 
+	int moderator = 2.0;
+
 	// Get variables from Data class
 	update();
 
 	// Driving base left/right
 	if (x != 0) {
 		// Divide by 2 to moderate speed
-		speed1 += x / 2.0;
-		speed2 += x / 2.0;
-		speed3 += x / 2.0;
-		speed4 += x / 2.0;
+		speed1 += x / moderator;
+		speed2 += x / moderator;
+		speed3 += x / moderator;
+		speed4 += x / moderator;
 	}
 
 	// Driving base up/down
 	if (y != 0) {
 		// Divide by 2 to moderate speed
-		speed1 += y / 2.0;
-		speed2 += y / 2.0;
-		speed3 += y / 2.0;
-		speed4 += y / 2.0;
+		speed1 += y / moderator;
+		speed2 += y / moderator;
+		speed3 += y / moderator;
+		speed4 += y / moderator;
 	}
 
 	// Sets the talons for the base
@@ -105,10 +107,11 @@ void Controls::resetSpeed() {
 
 void Controls::setDriveTalons(double speed1, double speed2, double speed3, double speed4) {
 	// Sets the talons for the base
-	setTalon(library::getTalon(library::FRONT_L), speed1);
-	setTalon(library::getTalon(library::FRONT_R), speed2);
-	setTalon(library::getTalon(library::BACK_L), speed3);
-	setTalon(library::getTalon(library::BACK_R), speed4);
+
+	setTalon(library->getTalon(library->FRONT_L), speed1);
+	setTalon(library->getTalon(library->FRONT_R), speed2);
+	setTalon(library->getTalon(library->BACK_L), speed3);
+	setTalon(library->getTalon(library->BACK_R), speed4);
 }
 
 void Controls::setTalon(Talon talon, double value) {

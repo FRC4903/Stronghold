@@ -10,11 +10,13 @@
 #include "AI.h"
 
 class Data {
+private:
 	Controls controls;
 	Sensors	sensors;
 	AI brains;
 	Auto auton;
 	Teleop tele;
+	static Data library;
 
 	int talonIDs[] = {1, 2, 3, 4};
 
@@ -27,10 +29,10 @@ class Data {
 
 public:
 	enum Talon {
-		FRONT_L,
-		FRONT_R,
-		BACK_L,
-		BACK_R
+		FRONT_L = 1,
+		FRONT_R = 2,
+		BACK_L = 3,
+		BACK_R = 4
 	};
 
 	/// <summary>
@@ -83,8 +85,9 @@ public:
 	/// Public access to all talons connected to the robot.
 	/// </summary>
 	/// <returns>Returns private instance of CANTalon</returns>
-	CANTalon::CANTalon getTalon(int motor);
+	CANTalon getTalon(int motor);
 
+	static Data *getInstance();
 };
 
 #endif

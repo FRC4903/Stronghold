@@ -9,7 +9,7 @@
 
 AI::AI()
 {
-	library = &getLibrary();
+	library = Data::getInstance();
 }
 
 AI::~AI()

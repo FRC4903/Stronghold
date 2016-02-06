@@ -15,6 +15,12 @@ Data::Data() {
 	tele = Teleop();
 }
 
+static Data Data::library;
+
+static Data *Data::getInstance() {
+	return &library;
+}
+
 Controls Data::getControls() {
 	return controls;
 }
