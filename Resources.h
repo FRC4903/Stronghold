@@ -8,14 +8,5 @@
 
 using namespace std;
 
-namespace conjure
-{
-	Data library = Data();
-
-	Data getLibrary()
-	{
-		return library;
-	}
-}
 
 #endif

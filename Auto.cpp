@@ -7,7 +7,7 @@
 #include "Auto.h"
 
 Auto::Auto() {
-	library = &conjure::getLibrary();
+	library = Data::getInstance();
 }
 
 Auto::~Auto()
