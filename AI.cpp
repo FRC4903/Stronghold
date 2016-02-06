@@ -10,6 +10,7 @@
 AI::AI()
 {
 	library = Data::getInstance();
+
 }
 
 AI::~AI()
