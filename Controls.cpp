@@ -8,9 +8,8 @@
 
 
 Controls::Controls() {
-
 	library = Data::getInstance();
-
+ 	
  	// Get variables from Data class
  	update();
 
