@@ -9,15 +9,16 @@
 
 Teleop::Teleop() {
 	// Teleop constructor
-	library = &conjure::getLibrary();
+	library = &getLibrary();
 }
 
 Teleop::~Teleop() {
 	// Teleop constructor
-	
+
 }
 
 void Teleop::run() {
 	// Tells Controls to drive base based on Left joystick X, Y
-	library.getControls().driveBase(library.getSensors().getBaseMovementInputX(), library.getSensors().getBaseMovementInputY());
+	(library->getControls()).driveBase((library->getSensors()).getBaseMovementInputX(), (library->getSensors()).getBaseMovementInputY());
+	// library->getControls().driveBase(library->getSensors().getBaseMovementInputX(), library->getSensors().getBaseMovementInputY());
 }

@@ -4,15 +4,15 @@
 #define SENSORS_H_
 
 #include <Joystick.h>
-#include "Resources.h"
+
+#include <iostream>
+
 #include "Data.h"
 
 class Sensors
 {
 	private:
 		Joystick base_control;
-		Data *library;
-
 	public:
 		Sensors();
 		// constructor
