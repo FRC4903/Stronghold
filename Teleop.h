@@ -5,7 +5,8 @@
 
 #include "Resources.h"
 
-class Teleop {
+class Teleop
+{
 public:
 	Teleop();
 	~Teleop();
