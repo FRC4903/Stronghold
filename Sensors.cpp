@@ -15,21 +15,24 @@
  {
  	// Sensors constructor
  	base_control = new Joystick(0);
+ 	library = Data::getInstance();
  }
 
  Sensors::~Sensors()
  {
  	// sensors destructor
+ 	delete base_control;
+ 	delete library;
  }
 
  Sensors::getBaseMovementInputX()
  {
  	// returns: x-axis of joystick for base
- 	return base_control.GetRawAxis(0);
+ 	return base_control->GetRawAxis(0);
  }
 
  Sensors::getBaseMovementInputY()
  {
  	// returns: y-axis of joystick for base
- 	return base_control.GetRawAxis(1);
+ 	return base_control->GetRawAxis(1);
  }

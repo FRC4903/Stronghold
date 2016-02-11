@@ -7,18 +7,21 @@
 
 #include "Teleop.h"
 
-Teleop::Teleop() {
+Teleop::Teleop()
+{
 	// Teleop constructor
-	library = &getLibrary();
+	library = Data::getInstance();
 }
 
-Teleop::~Teleop() {
-	// Teleop constructor
+Teleop::~Teleop()
+
+	delete library;
 
 }
 
-void Teleop::run() {
-	// Tells Controls to drive base based on Left joystick X, Y
-	(library->getControls()).driveBase((library->getSensors()).getBaseMovementInputX(), (library->getSensors()).getBaseMovementInputY());
+void Teleop::run()
+{
+	// Tells Controls to drive base
+	library->getControls().driveBase();
 	// library->getControls().driveBase(library->getSensors().getBaseMovementInputX(), library->getSensors().getBaseMovementInputY());
 }

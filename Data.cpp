@@ -7,51 +7,52 @@
 
 #include "Data.h"
 
-Data::Data() {
-	controls = Controls();
-	sensors = Sensors();
-	brains = AI();
-	auton = Auto();
-	tele = Teleop();
+Data::Data()
+    : Controls(),
+      Sensors(),
+      AI(),
+      Auto(),
+      Teleop()
+{
+}
+
+Data::~Data()
+{
+    delete controls;
+    delete sensors;
+    delete brains;
+    delete auton;
+    delete tele;
 }
 
 static Data Data::library;
 
-static Data *Data::getInstance() {
+static Data *Data::getInstance()
+{
 	return &library;
 }
 
-Controls Data::getControls() {
+Controls Data::getControls()
+{
 	return controls;
 }
 
-Sensors Data::getSensors() {
+Sensors Data::getSensors()
+{
 	return sensors;
 }
 
-AI Data::getAI() {
+AI Data::getAI()
+{
 	return brains;
 }
 
-Auto Data::getAuto() {
+Auto Data::getAuto()
+{
 	return auton;
 }
 
-Teleop Data::getTele() {
+Teleop Data::getTele()
+{
 	return tele;
-}
-
-CANTalon::CANTalon Data::getTalon(int motor) {
-	switch(motor) {
-		case FRONT_L:
-			return talons[FRONT_L];
-		case FRONT_R:
-			return talons[FRONT_R];
-		case BACK_L:
-			return talons[BACK_L];
-		case BACK_R:
-			return talons[BACK_R];
-		default:
-			return NULL;
-	}
 }

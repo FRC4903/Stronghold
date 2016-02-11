@@ -16,18 +16,18 @@ public:
 	/// Moves the base of the robot by outputing
 	/// PWM signals to the base CIM motors
 	/// </summary>
-	void driveBase(int x, int y);
+	void driveBase();
 
 	/// <summary>
 	/// Pivots the robot left, while maintaining
-	/// current position. Turns left wheel set 
+	/// current position. Turns left wheel set
 	/// in reverse and right wheel set forward
 	/// </summary>
 	void pivotLeft();
 
 	/// <summary>
 	/// Pivots the robot right, while maintaining
-	/// current position. Turns right wheel set 
+	/// current position. Turns right wheel set
 	/// in reverse and left wheel set forward
 	/// </summary>
 	void pivotRight();
@@ -41,7 +41,7 @@ public:
 
 	/// <summary>
 	/// Turns the wheels on the grabbing mechanism
-	/// in reverse to shoot out the boulder by 
+	/// in reverse to shoot out the boulder by
 	/// sending signal to Mini CIM mottors
 	/// </summary>
 	void reverseBall();
@@ -58,7 +58,7 @@ public:
 	/// porticullis defense
 	/// </summary>
 	void liftTriangles();
-	
+
 	/// <summary>
 	/// Lowers the triangle mechanism to lower the
 	/// cheval de frise defense
@@ -86,7 +86,7 @@ public:
 	/// <summary>
 	/// Sets the Talon values for the drive system based on each speed
 	/// </summary>
-	void setDriveTalons(double speed1, double speed2, double speed3, double speed4);
+	void setDriveTalons(double speedL, double speedR);
 
 	/// <summary>
 	/// Sets the CANTalon value to the value passed
@@ -104,18 +104,19 @@ private:
 	Data *library;
 
 	// Talons
-	Talon talon1;
-	Talon talon2;
-	Talon talon3;
-	Talon talon4;
+	Talon *talon0;
+	Talon *talon1;
+	Talon *talon2;
+	Talon *talon3;
 
 	bool trianglesLowered;
 
+	int moderator = 2.0;
+
+	double j_x, j_y;
+
 	// Speed of each drive Talon
-	double speed1;
-	double speed2;
-	double speed3;
-	double speed4;
+	double speedR, speedL;
 };
 
 #endif

@@ -1,4 +1,3 @@
-#include "WPILib.h"
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
@@ -9,7 +8,7 @@ class Robot: public IterativeRobot
 private:
 	std::unique_ptr<Command> autonomousCommand;
 	SendableChooser *chooser;
-	Data library;
+	Data *library;
 
 	void RobotInit()
 	{
@@ -72,6 +71,8 @@ private:
 		// this line or comment it out.
 		if (autonomousCommand != NULL)
 			autonomousCommand->Cancel();
+
+        library = Data::getInstance();
 	}
 
 	void TeleopPeriodic()

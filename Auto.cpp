@@ -12,5 +12,5 @@ Auto::Auto() {
 
 Auto::~Auto()
 {
-	// Auto deconstructor
+	delete library;
 }
