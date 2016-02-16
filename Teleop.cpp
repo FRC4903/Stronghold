@@ -6,6 +6,7 @@
  */
 
 #include "Teleop.h"
+#include "Data.h"
 
 Teleop::Teleop()
 {
@@ -13,15 +14,14 @@ Teleop::Teleop()
 	library = Data::getInstance();
 }
 
-Teleop::~Teleop()
+Teleop::~Teleop() {
 
-	delete library;
 
 }
 
 void Teleop::run()
 {
 	// Tells Controls to drive base
-	library->getControls().driveBase();
+	library->getControls()->driveBase();
 	// library->getControls().driveBase(library->getSensors().getBaseMovementInputX(), library->getSensors().getBaseMovementInputY());
 }

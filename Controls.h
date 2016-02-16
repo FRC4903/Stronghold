@@ -2,9 +2,10 @@
 
 #ifndef CONTROL_H
 #define CONTROL_H
-
 #include "Resources.h"
-#include "Data.h"
+
+//#include "Data.h"
+class Data;
 
 class Controls
 {
@@ -104,10 +105,10 @@ private:
 	Data *library;
 
 	// Talons
-	Talon *talon0;
-	Talon *talon1;
-	Talon *talon2;
-	Talon *talon3;
+	Talon talon0;
+	Talon talon1;
+	Talon talon2;
+	Talon talon3;
 
 	bool trianglesLowered;
 

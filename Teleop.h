@@ -3,7 +3,7 @@
 #ifndef TELEOP_H
 #define TELEOP_H
 
-#include "Resources.h"
+class Data;
 
 class Teleop
 {

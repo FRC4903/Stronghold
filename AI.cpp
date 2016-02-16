@@ -6,6 +6,7 @@
  */
 
 #include "AI.h"
+#include "Data.h"
 
 AI::AI()
 {
