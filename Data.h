@@ -11,11 +11,11 @@
 class Data
 {
 private:
-	Controls *controls;
-	Sensors	*sensors;
-	AI *brains;
-	Auto *auton;
-	Teleop *tele;
+	Controls controls;
+	Sensors	sensors;
+	AI brains;
+	Auto auton;
+	Teleop tele;
 	static Data library;
 
 public:
@@ -36,7 +36,7 @@ public:
 	/// public methods from Sensors
 	/// </summary>
 	/// <returns>Returns public instance of Sensors</returns>
-	Sensors getSensors();
+	Sensors *getSensors();
 
 	/// <summary>
 	/// Public access to Auto class.
@@ -44,7 +44,7 @@ public:
 	/// public methods from Auto
 	/// </summary>
 	/// <returns>Returns public instance of Auto</returns>
-	Auto getAuto();
+	Auto *getAuto();
 
 	/// <summary>
 	/// Public access to Controls class.
@@ -52,7 +52,7 @@ public:
 	/// public methods from Controls
 	/// </summary>
 	/// <returns>Returns public instance of Controls</returns>
-	Controls getControls();
+	Controls *getControls();
 
 	/// <summary>
 	/// Public access to AI class.
@@ -60,7 +60,7 @@ public:
 	/// public methods from AI
 	/// </summary>
 	/// <returns>Returns public instance of AI</returns>
-	AI getAI();
+	AI *getAI();
 
 	/// <summary>
 	/// Public access to Teleop class.
@@ -68,7 +68,7 @@ public:
 	/// public methods from Teleop
 	/// </summary>
 	/// <returns>Returns public instance of Teleop</returns>
-	Teleop getTele();
+	Teleop *getTele();
 
 	static Data *getInstance();
 };

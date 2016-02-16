@@ -4,12 +4,12 @@
 #define SENSORS_H_
 
 #include "Resources.h"
-
+class Data;
 class Sensors
 {
 private:
-    Joystick *base_control;
-    Data *library;
+	Joystick *base_control;
+	Data *library;
 
 public:
     Sensors();

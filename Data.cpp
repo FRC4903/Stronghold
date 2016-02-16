@@ -8,51 +8,47 @@
 #include "Data.h"
 
 Data::Data()
-    : Controls(),
-      Sensors(),
-      AI(),
-      Auto(),
-      Teleop()
+    : controls(),
+      sensors(),
+      brains(),
+      auton(),
+      tele()
 {
 }
 
 Data::~Data()
 {
-    delete controls;
-    delete sensors;
-    delete brains;
-    delete auton;
-    delete tele;
+
 }
 
-static Data Data::library;
+Data Data::library;
 
-static Data *Data::getInstance()
+Data *Data::getInstance()
 {
 	return &library;
 }
 
-Controls Data::getControls()
+Controls *Data::getControls()
 {
-	return controls;
+	return &controls;
 }
 
-Sensors Data::getSensors()
+Sensors *Data::getSensors()
 {
-	return sensors;
+	return &sensors;
 }
 
-AI Data::getAI()
+AI *Data::getAI()
 {
-	return brains;
+	return &brains;
 }
 
-Auto Data::getAuto()
+Auto *Data::getAuto()
 {
-	return auton;
+	return &auton;
 }
 
-Teleop Data::getTele()
+Teleop *Data::getTele()
 {
-	return tele;
+	return &tele;
 }

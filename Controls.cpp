@@ -5,9 +5,14 @@
  */
 
 #include "Controls.h"
+#include "Data.h"
 
-
-Controls::Controls() {
+Controls::Controls()
+	: talon0(0),
+	  talon1(1),
+	  talon2(2),
+	  talon3(3)
+{
 	library = Data::getInstance();
 
  	// Get variables from Data class
@@ -18,20 +23,12 @@ Controls::Controls() {
 
  	resetSpeed();
 
-    talon0 = new Talon(0);
-    talon1 = new Talon(1);
-    talon2 = new Talon(2);
-    talon3 = new Talon(3);
 }
 
 Controls::~Controls() {
 	// Controls destructor
-	delete talon0;
-	delete talon1;
-	delete talon2;
-	delete talon3;
 
-	delete library;
+
 }
 
 void Controls::driveBase()
@@ -39,8 +36,8 @@ void Controls::driveBase()
 	// Get variables from Data class
 	update();
 
-	j_x = library->getSensors().getBaseMovementInputX() / moderator;
-	j_y = library->getSensors().getBaseMovementInputY() / moderator;
+	j_x = library->getSensors()->getBaseMovementInputX() / moderator;
+	j_y = library->getSensors()->getBaseMovementInputY() / moderator;
 
 	speedL += -j_y + j_x;
 	speedR += -j_y - j_x;
@@ -103,10 +100,10 @@ void Controls::resetSpeed() {
 
 void Controls::setDriveTalons(double speedL, double speedR) {
 	// Sets the talons for the base
-	talon0->Set(-speedR);
-	talon1->Set(-speedR);
-	talon2->Set(speedL);
-	talon3->Set(speedL);
+	talon0.Set(-speedR);
+	talon1.Set(-speedR);
+	talon2.Set(speedL);
+	talon3.Set(speedL);
 }
 
 void Controls::setTalon(Talon talon, double value) {

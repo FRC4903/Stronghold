@@ -4,8 +4,9 @@
 #define AUTO_H_
 
 #include "Resources.h"
-#include "Data.h"
+//#include "Data.h"
 
+class Data;
 class Auto
 {
 public:

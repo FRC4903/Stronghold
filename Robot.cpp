@@ -2,6 +2,7 @@
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
 #include "Resources.h"
+#include "Data.h"
 
 class Robot: public IterativeRobot
 {
@@ -79,7 +80,7 @@ private:
 	{
 		Scheduler::GetInstance()->Run();
 		// Calls Teleop run here
-		library->getTele().run();
+		library->getTele()->run();
 	}
 
 	void TestPeriodic()

@@ -8,6 +8,7 @@
  */
 
 #include "Sensors.h"
+#include "Data.h"
 
  using namespace std;
 
@@ -25,13 +26,13 @@
  	delete library;
  }
 
- Sensors::getBaseMovementInputX()
+ double Sensors::getBaseMovementInputX()
  {
  	// returns: x-axis of joystick for base
  	return base_control->GetRawAxis(0);
  }
 
- Sensors::getBaseMovementInputY()
+ double Sensors::getBaseMovementInputY()
  {
  	// returns: y-axis of joystick for base
  	return base_control->GetRawAxis(1);

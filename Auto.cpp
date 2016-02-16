@@ -5,6 +5,7 @@
  */
 
 #include "Auto.h"
+#include "Data.h"
 
 Auto::Auto() {
 	library = Data::getInstance();
