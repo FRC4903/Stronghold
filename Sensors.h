@@ -10,6 +10,10 @@ class Sensors
 private:
 	Joystick *base_control;
     Joystick *secondary_control;
+
+    // Photoelectric Limit Switch
+    DigitalInput *intake_sensor;
+
 	Data *library;
 
 public:
@@ -52,6 +56,11 @@ public:
     /// returns the value of the secondary controller's button 3(for the piston controls)
     /// </summary>
     bool getSecondaryPistonDown();
+
+    /// <summary>
+    /// returns whether or not the ball is in the shoting mechanism
+    /// </summary>
+    bool getIntakeSensor();
 };
 
 #endif
