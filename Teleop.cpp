@@ -14,8 +14,8 @@ Teleop::Teleop()
 	library = Data::getInstance();
 }
 
-Teleop::~Teleop() {
-
+Teleop::~Teleop()
+{
 
 }
 
@@ -23,5 +23,21 @@ void Teleop::run()
 {
 	// Tells Controls to drive base
 	library->getControls()->driveBase();
-	// library->getControls().driveBase(library->getSensors().getBaseMovementInputX(), library->getSensors().getBaseMovementInputY());
+	
+	if (library->getSensors()->getSecondarySideButton())
+	{
+		library->getControls()->intake();
+	}
+	if (library->getSensors()->getSecondaryTrigger())
+	{
+		library->getControls()->trebuchet();
+	}
+	if (library->getSensors()->getSecondaryPistonUp())
+	{
+		library->getControls()->liftTriangles();
+	}
+	if (library->getSensors()->getSecondaryPistonDown())
+	{
+		library->getControls()->lowerTriangles();
+	}
 }
