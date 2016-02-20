@@ -27,8 +27,6 @@ Controls::Controls()
 
 Controls::~Controls() {
 	// Controls destructor
-
-
 }
 
 void Controls::driveBase()
@@ -50,23 +48,11 @@ void Controls::driveBase()
 
 }
 
-void Controls::pivotLeft() {
+void Controls::intake() {
 
 }
 
-void Controls::pivotRight() {
-
-}
-
-void Controls::grabBall() {
-
-}
-
-void Controls::reverseBall() {
-
-}
-
-void Controls::launchBall() {
+void Controls::trebuchet() {
 
 }
 
@@ -88,7 +74,14 @@ void Controls::toggleTriangles() {
 }
 
 void Controls::update() {
-
+	if (library->getSensors()->getDriveControllerAButton())
+	{
+		moderator = 1.5;
+	}
+	else
+	{
+		moderator = 2.0;
+	}
 }
 
 void Controls::resetSpeed() {
