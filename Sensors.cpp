@@ -16,6 +16,7 @@
  {
  	// Sensors constructor
  	base_control = new Joystick(0);
+ 	secondary_control = new Joystick(1)
  	library = Data::getInstance();
  }
 
@@ -37,3 +38,30 @@
  	// returns: y-axis of joystick for base
  	return base_control->GetRawAxis(1);
  }
+
+ bool Sensors::getDriveControllerAButton()
+ {
+ 	return base_control->GetRawButton(1);
+ }
+
+ bool Sensors::getSecondaryTrigger()
+ {
+ 	return secondary_control->GetRawButton(1);
+ }
+
+ bool Sensors::getSecondarySideButton()
+ {
+ 	return secondary_control->GetRawButton(2);
+ }
+
+ bool Sensors::getSecondaryPistonUp()
+ {
+ 	return secondary_control->GetRawButton(5);
+ }
+
+ bool Sensors::getSecondaryPistonDown()
+ {
+ 	return secondary_control->GetRawButton(3);
+ }
+
+
