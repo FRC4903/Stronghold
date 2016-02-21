@@ -96,9 +96,6 @@ private:
 
 	DoubleSolenoid triangleSolenoid;
 
-	// triangle mechanism status
-	bool trianglesLowered;
-
 	// moderator for driving
 	int moderator = 2.0;
 
