@@ -2,7 +2,7 @@
 * @File:			Data.cpp
 * @Description:	Data class contains instance of all variables used by program.
 * 					It also controls how classes access each other and variables.
-* @Author: 		Abhi Gupta
+* @Author: 		Dilpreet Chana, Rickey My Friend
 */
 
 #include "Data.h"

@@ -43,7 +43,7 @@ void Controls::driveBase()
 	speedR += -j_y - j_x;
 
 	// Sets the talons for the base
-	setDriveTalons(speedL, speedR);
+	setDriveTalons();
 
 	// reset speeds to 0
 	reset();
@@ -52,38 +52,35 @@ void Controls::driveBase()
 
 void Controls::intake()
 {
-	intake_motor.Set(1.0);
+	intake_val = 1.0;
 	if (!library->getSensors()->getIntakeSensor())
 	{
-		holding_motor.Set(1.0);
+		hold_val = 1.0;
 	}
 }
 
 void Controls::trebuchet()
 {
-	trebuchet_top_motor.Set(-1.0);
-	trebuchet_bot_motor.Set(1.0);
+	top_val = -1.0;
+	bot_val = 1.0;
 }
 
 void Controls::liftTriangles()
 {
+	if (trianglesLowered)
+	{
+		// Do the thing
+		trianglesLowered = false;
+	}
 
 }
 
 void Controls::lowerTriangles()
 {
-
-}
-
-void Controls::toggleTriangles()
-{
-	if (trianglesLowered)
+	if (!trianglesLowered)
 	{
-		liftTriangles();
-	}
-	else
-	{
-		lowerTriangles();
+		// Do thing
+		trianglesLowered = true;
 	}
 }
 
@@ -106,18 +103,22 @@ void Controls::reset()
 	speedR = 0.0;
 	j_x = 0.0;
 	j_y = 0.0;
-
-	intake_motor.Set(0.0);
-	holding_motor.Set(0.0);
-	trebuchet_top_motor.Set(0.0);
-	trebuchet_bot_motor.Set(0.0);
+	intake_val = 0.0;
+	hold_val = 0.0;
+	top_val = 0.0;
+	bot_val = 0.0;
 }
 
-void Controls::setDriveTalons(double speedL, double speedR)
+void Controls::setTalons()
 {
 	// Sets the talons for the base
 	talon0.Set(-speedR);
 	talon1.Set(-speedR);
 	talon2.Set(speedL);
 	talon3.Set(speedL);
+
+	intake_motor.Set(intake_val);
+	holding_motor.Set(hold_val);
+	trebuchet_top_motor.Set(top_val);
+	trebuchet_bot_motor.Set(bot_val);
 }

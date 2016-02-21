@@ -85,21 +85,9 @@ public:
 	void reset();
 
 	/// <summary>
-	/// Sets the Talon values for the drive system based on each speed
+	/// Sets all talons to their respective variable value
 	/// </summary>
-	void setDriveTalons(double speedL, double speedR);
-
-	/// <summary>
-	/// Sets the CANTalon value to the value passed
-	/// in
-	/// </summary>
-	void setTalon(CANTalon talon, double value);
-
-	/// <summary>
-	/// Sets the Talon value to the value passed
-	/// in
-	/// </summary>
-	void setTalon(Talon talon, double value);
+	void setTalons();
 
 private:
 	Data *library;
@@ -124,6 +112,9 @@ private:
 
 	// Speed of each drive Talon
 	double speedR, speedL;
+	double intake_val;
+	double hold_val;
+	double top_val, bot_val;
 };
 
 #endif
