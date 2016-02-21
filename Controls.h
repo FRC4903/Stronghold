@@ -82,33 +82,27 @@ public:
 	/// <summary>
 	/// Resets the speed of each talon to 0
 	/// </summary>
-	void resetSpeed();
+	void reset();
 
 	/// <summary>
-	/// Sets the Talon values for the drive system based on each speed
+	/// Sets all talons to their respective variable value
 	/// </summary>
-	void setDriveTalons(double speedL, double speedR);
-
-	/// <summary>
-	/// Sets the CANTalon value to the value passed
-	/// in
-	/// </summary>
-	void setTalon(CANTalon talon, double value);
-
-	/// <summary>
-	/// Sets the Talon value to the value passed
-	/// in
-	/// </summary>
-	void setTalon(Talon talon, double value);
+	void setTalons();
 
 private:
 	Data *library;
 
-	// Talons
+	// Drive Talons
 	Talon talon0;
 	Talon talon1;
 	Talon talon2;
 	Talon talon3;
+
+	// Function Talons
+	CANTalon intake_motor;
+	CANTalon holding_motor;
+	CANTalon trebuchet_top_motor;
+	CANTalon trebuchet_bot_motor;
 
 	bool trianglesLowered;
 
@@ -118,6 +112,9 @@ private:
 
 	// Speed of each drive Talon
 	double speedR, speedL;
+	double intake_val;
+	double hold_val;
+	double top_val, bot_val;
 };
 
 #endif

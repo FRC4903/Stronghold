@@ -2,7 +2,7 @@
  * @File:			Teleop.cpp
  * @Description:	Teleop class contains all of the logic that will be implementing
  * 					all of the other classes devleoped by various members.
- * @Author: 		Abhi Gupta
+ * @Author: 		Dilpreet Chana
  */
 
 #include "Teleop.h"
@@ -21,7 +21,8 @@ Teleop::~Teleop()
 
 void Teleop::run()
 {
-	// Tells Controls to drive base
+	library->getControls()->update();
+
 	library->getControls()->driveBase();
 	
 	if (library->getSensors()->getSecondarySideButton())
@@ -40,4 +41,6 @@ void Teleop::run()
 	{
 		library->getControls()->lowerTriangles();
 	}
+
+	library->getControls()->setTalons();
 }
