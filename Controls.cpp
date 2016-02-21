@@ -8,6 +8,7 @@
 #include "Data.h"
 
 Controls::Controls()
+	// initialize talons
 	: talon0(0),
 	  talon1(1),
 	  talon2(2),
@@ -19,7 +20,6 @@ Controls::Controls()
 {
 	library = Data::getInstance();
 
- 	// Get variables from Data class
  	update();
 
  	// Set starting variables
@@ -29,13 +29,11 @@ Controls::Controls()
 
 }
 
-Controls::~Controls()
-{
+Controls::~Controls() {
 	// Controls destructor
 }
 
-void Controls::driveBase()
-{
+void Controls::driveBase() {
 	j_x = library->getSensors()->getBaseMovementInputX() / moderator;
 	j_y = library->getSensors()->getBaseMovementInputY() / moderator;
 
@@ -50,75 +48,75 @@ void Controls::driveBase()
 
 }
 
-void Controls::intake()
-{
-	intake_val = 1.0;
-	if (!library->getSensors()->getIntakeSensor())
-	{
-		hold_val = 1.0;
+void Controls::intake() {
+	intake_value = 1.0;
+
+	if (!library->getSensors()->getIntakeSensor()) {
+		hold_value = 1.0;
 	}
 }
 
-void Controls::trebuchet()
-{
-	top_val = -1.0;
-	bot_val = 1.0;
+void Controls::trebuchet() {
+	top_value = -1.0;
+	bottom_value = 1.0;
 }
 
-void Controls::liftTriangles()
-{
-	if (trianglesLowered)
-	{
-		// Do the thing
+void Controls::liftTriangles() {
+	if (trianglesLowered) {
+		// Lift traingles code here
 		trianglesLowered = false;
 	}
 
 }
 
-void Controls::lowerTriangles()
-{
-	if (!trianglesLowered)
-	{
-		// Do thing
+void Controls::lowerTriangles() {
+	if (!trianglesLowered) {
+		// Lower triangles code here
 		trianglesLowered = true;
 	}
 }
 
-void Controls::update()
-{
-	if (library->getSensors()->getDriveControllerAButton())
-	{
+void Controls::update() {
+	if (library->getSensors()->getDriveControllerAButton()) {
+		// boost driving when holding "A" button on controller
 		moderator = 1.5;
 	}
-	else
-	{
+	else {
+		// standard moderator
 		moderator = 2.0;
 	}
+
 	reset();
 }
 
-void Controls::reset()
-{
+void Controls::reset() {
+	// drive variables
 	speedL = 0.0;
 	speedR = 0.0;
 	j_x = 0.0;
 	j_y = 0.0;
-	intake_val = 0.0;
-	hold_val = 0.0;
-	top_val = 0.0;
-	bot_val = 0.0;
+
+	// ball intake/holding variables
+	intake_value = 0.0;
+	hold_value = 0.0;
+
+	// trebuchet variables
+	top_value = 0.0;
+	bottom_value = 0.0;
 }
 
-void Controls::setTalons()
-{
+void Controls::setTalons() {
 	// Sets the talons for the base
 	talon0.Set(-speedR);
 	talon1.Set(-speedR);
 	talon2.Set(speedL);
 	talon3.Set(speedL);
 
-	intake_motor.Set(intake_val);
-	holding_motor.Set(hold_val);
-	trebuchet_top_motor.Set(top_val);
-	trebuchet_bot_motor.Set(bot_val);
+	// Set intake and holding talons
+	intake_motor.Set(intake_value);
+	holding_motor.Set(hold_value);
+
+	// Set trebuchet talons
+	trebuchet_top_motor.Set(top_value);
+	trebuchet_bottom_motor.Set(bottom_value);
 }
