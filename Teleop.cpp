@@ -33,13 +33,19 @@ void Teleop::run()
 	{
 		library->getControls()->trebuchet();
 	}
+
+	// Triangle mechanism
 	if (library->getSensors()->getSecondaryPistonUp())
 	{
 		library->getControls()->liftTriangles();
 	}
-	if (library->getSensors()->getSecondaryPistonDown())
+	else if (library->getSensors()->getSecondaryPistonDown())
 	{
 		library->getControls()->lowerTriangles();
+	}
+	else
+	{
+		library->getControls->stopTriangles();
 	}
 
 	library->getControls()->setTalons();

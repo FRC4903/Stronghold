@@ -16,14 +16,12 @@ Controls::Controls()
 	  intake_motor(0),
 	  holding_motor(1),
 	  trebuchet_top_motor(2),
-	  trebuchet_bot_motor(3)
+	  trebuchet_bot_motor(3),
+	  triangleSolenoid(1, 2)
 {
 	library = Data::getInstance();
 
  	update();
-
- 	// Set starting variables
- 	trianglesLowered = false;
 
  	reset();
 
@@ -62,18 +60,15 @@ void Controls::trebuchet() {
 }
 
 void Controls::liftTriangles() {
-	if (trianglesLowered) {
-		// Lift traingles code here
-		trianglesLowered = false;
-	}
-
+	triangleSolenoid->Set(DoubleSolenoid::kForward);
 }
 
 void Controls::lowerTriangles() {
-	if (!trianglesLowered) {
-		// Lower triangles code here
-		trianglesLowered = true;
-	}
+	triangleSolenoid->Set(DoubleSolenoid::kReverse);
+}
+
+void Controls::stopTriangles() {
+	triangleSolenoid->Set(DoubleSolenoid::kOff);
 }
 
 void Controls::update() {
