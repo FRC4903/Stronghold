@@ -58,6 +58,11 @@ public:
 	void lowerTriangles();
 
 	/// <summary>
+	/// Stops the movement of the triangle mechanism
+	/// </summary>
+	void stopTriangles();
+
+	/// <summary>
 	/// Updates the local variables from the Data
 	/// class to have consistent values for motor
 	/// outputs
@@ -89,8 +94,7 @@ private:
 	CANTalon trebuchet_top_motor;
 	CANTalon trebuchet_bot_motor;
 
-	// triangle mechanism status
-	bool trianglesLowered;
+	DoubleSolenoid triangleSolenoid;
 
 	// moderator for driving
 	int moderator = 2.0;
