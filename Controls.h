@@ -20,25 +20,11 @@ public:
 	void driveBase();
 
 	/// <summary>
-	/// Pivots the robot left, while maintaining
-	/// current position. Turns left wheel set
-	/// in reverse and right wheel set forward
-	/// </summary>
-	void pivotLeft();
-
-	/// <summary>
-	/// Pivots the robot right, while maintaining
-	/// current position. Turns right wheel set
-	/// in reverse and left wheel set forward
-	/// </summary>
-	void pivotRight();
-
-	/// <summary>
 	/// Turns the wheels on the grabbing mechanism
 	/// to intake the boulder by sending signal to
 	/// Mini CIM motors
 	/// </summary>
-	void grabBall();
+	void intake();
 
 	/// <summary>
 	/// Turns the wheels on the grabbing mechanism
@@ -55,6 +41,11 @@ public:
 	void launchBall();
 
 	/// <summary>
+	/// Trebuchet does something
+	/// </summary>
+	void trebuchet();
+
+	/// <summary>
 	/// Lifts the triangle mechanism to lift the
 	/// porticullis defense
 	/// </summary>
@@ -65,12 +56,6 @@ public:
 	/// cheval de frise defense
 	/// </summary>
 	void lowerTriangles();
-
-	/// <summary>
-	/// Toggles the position of the triangle
-	/// mechanism
-	/// </summary>
-	void toggleTriangles();
 
 	/// <summary>
 	/// Updates the local variables from the Data
@@ -98,23 +83,26 @@ private:
 	Talon talon2;
 	Talon talon3;
 
-	// Function Talons
+	// Action Talons
 	CANTalon intake_motor;
 	CANTalon holding_motor;
 	CANTalon trebuchet_top_motor;
 	CANTalon trebuchet_bot_motor;
 
+	// triangle mechanism status
 	bool trianglesLowered;
 
+	// moderator for driving
 	int moderator = 2.0;
 
+	// joystick x and y
 	double j_x, j_y;
 
 	// Speed of each drive Talon
 	double speedR, speedL;
-	double intake_val;
-	double hold_val;
-	double top_val, bot_val;
+	double intake_value;
+	double hold_value;
+	double top_value, bottom_value;
 };
 
 #endif
