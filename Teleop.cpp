@@ -21,6 +21,7 @@ Teleop::~Teleop()
 
 void Teleop::run()
 {
+	library->getControls()->update();
 	// Tells Controls to drive base
 	library->getControls()->driveBase();
 	

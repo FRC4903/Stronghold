@@ -82,7 +82,7 @@ public:
 	/// <summary>
 	/// Resets the speed of each talon to 0
 	/// </summary>
-	void resetSpeed();
+	void reset();
 
 	/// <summary>
 	/// Sets the Talon values for the drive system based on each speed
@@ -104,11 +104,17 @@ public:
 private:
 	Data *library;
 
-	// Talons
+	// Drive Talons
 	Talon talon0;
 	Talon talon1;
 	Talon talon2;
 	Talon talon3;
+
+	// Function Talons
+	CANTalon intake_motor;
+	CANTalon holding_motor;
+	CANTalon trebuchet_top_motor;
+	CANTalon trebuchet_bot_motor;
 
 	bool trianglesLowered;
 
