@@ -59,16 +59,16 @@ void Controls::trebuchet() {
 	bottom_value = 1.0;
 }
 
-void Controls::liftTriangles() {
-	triangleSolenoid->Set(DoubleSolenoid::kForward);
+void Controls::liftSpears() {
+	spearSolenoid->Set(DoubleSolenoid::kForward);
 }
 
-void Controls::lowerTriangles() {
-	triangleSolenoid->Set(DoubleSolenoid::kReverse);
+void Controls::lowerSpears() {
+	spearSolenoid->Set(DoubleSolenoid::kReverse);
 }
 
-void Controls::stopTriangles() {
-	triangleSolenoid->Set(DoubleSolenoid::kOff);
+void Controls::stopSpears() {
+	spearSolenoid->Set(DoubleSolenoid::kOff);
 }
 
 void Controls::update() {
