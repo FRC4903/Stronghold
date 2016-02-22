@@ -7,8 +7,7 @@
 //#include "Data.h"
 class Data;
 
-class Controls
-{
+class Controls {
 public:
 	Controls();
 	~Controls();
@@ -49,18 +48,18 @@ public:
 	/// Lifts the triangle mechanism to lift the
 	/// porticullis defense
 	/// </summary>
-	void liftTriangles();
+	void liftSpears();
 
 	/// <summary>
 	/// Lowers the triangle mechanism to lower the
 	/// cheval de frise defense
 	/// </summary>
-	void lowerTriangles();
+	void lowerSpears();
 
 	/// <summary>
 	/// Stops the movement of the triangle mechanism
 	/// </summary>
-	void stopTriangles();
+	void stopSpears();
 
 	/// <summary>
 	/// Updates the local variables from the Data
@@ -94,7 +93,7 @@ private:
 	CANTalon trebuchet_top_motor;
 	CANTalon trebuchet_bot_motor;
 
-	DoubleSolenoid triangleSolenoid;
+	DoubleSolenoid spearSolenoid;
 
 	// moderator for driving
 	int moderator = 2.0;

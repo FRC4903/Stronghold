@@ -37,15 +37,15 @@ void Teleop::run()
 	// Triangle mechanism
 	if (library->getSensors()->getSecondaryPistonUp())
 	{
-		library->getControls()->liftTriangles();
+		library->getControls()->liftSpears();
 	}
 	else if (library->getSensors()->getSecondaryPistonDown())
 	{
-		library->getControls()->lowerTriangles();
+		library->getControls()->lowerSpears();
 	}
 	else
 	{
-		library->getControls->stopTriangles();
+		library->getControls->stopSpears();
 	}
 
 	library->getControls()->setTalons();
