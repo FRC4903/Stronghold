@@ -1,3 +1,4 @@
+
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
@@ -24,7 +25,7 @@ private:
 
 	DoubleSolenoid *spearSolenoid;
 
-	// Compressor *c;
+	Compressor *c;
 
 	DigitalInput *intake_sensor;
 
@@ -34,6 +35,11 @@ private:
 	double intake_val;
 
 	bool is_intaking;
+
+	bool enabled;
+	bool pressureSwitch;
+
+	float current;
 
 	void RobotInit()
 	{
@@ -60,7 +66,7 @@ private:
 
 		is_intaking = false;
 
-		// c = new Compressor(0);
+		c = new Compressor(0);
 	}
 
 	/**
@@ -120,6 +126,7 @@ private:
 	{
 		Scheduler::GetInstance()->Run();
 
+		// Reset all values
 		speedL = 0.0;
 		speedR = 0.0;
 		treb_top = 0.0;
@@ -130,41 +137,56 @@ private:
 		double j_x = base_control->GetRawAxis(0);
 		double j_y = base_control->GetRawAxis(1);
 
+		// Shoot
 		if (action_control->GetRawButton(1)) {
 			treb_top = 1.0;
 			treb_bot = -1.0;
 			hold_val = 1.0;
 		}
+		// Lob the ball at low power from the shooter into the low goal
 		if (action_control->GetRawButton(6)) {
 			treb_top = 0.5;
 			treb_bot = -0.5;
 			hold_val = 1.0;
 		}
+		// Reverse the ball back out the intake part
 		if (action_control->GetRawButton(4)) {
 			intake_val = -1.0;
 			hold_val = -1.0;
 		}
+		// Intake the ball
 		if (action_control->GetRawButton(2)) {
 			hold_val = 1.0;
 			intake_val = 1.0;
 		}
 
+		// Driving
 		speedL += -j_y - j_x;
 		speedR += -j_y + j_x;
 
+		// Maximum drive motor speed
 		if (base_control->GetRawButton(1)) {
 			speedL /= 1.0;
 			speedR /= 1.0;
 		}
+		// Slow drive motor speed for little adjustments in robot position
 		else if (base_control->GetRawButton(2)) {
 			speedL /= 3.0;
 			speedR /= 3.0;
 		}
+		// Regular speed of drive motors
 		else {
-			speedL /= 2.0;
-			speedR /= 2.0;
+			speedL /= 1.75;
+			speedR /= 1.75;
 		}
 
+		// Pneumatics section
+
+		enabled = c->Enabled();
+		pressureSwitch = c->GetPressureSwitchValue();
+		current = c->GetCompressorCurrent();
+
+		// Spears
 		if (action_control->GetRawButton(7)) {
 			spearSolenoid->Set(DoubleSolenoid::kForward);
 		} else if (action_control->GetRawButton(8)) {
@@ -174,11 +196,21 @@ private:
 			spearSolenoid->Set(DoubleSolenoid::kOff);
 		}
 
+		// Compressor
+		if (action_control->GetRawButton(11)) {
+			c->SetClosedLoopControl(true);
+		} else if (action_control->GetRawButton(12)) {
+			c->SetClosedLoopControl(false);
+		}
+
+
+		// Set driving talons
 		talon0->Set(speedR);
 		talon1->Set(speedR);
 		talon2->Set(-speedL);
 		talon3->Set(-speedL);
 
+		// Set shooting and intake talons
 		trebuchet_top_motor->Set(-treb_top);
 		trebuchet_bot_motor->Set(-treb_bot);
 		intake_motor->Set(-intake_val);
