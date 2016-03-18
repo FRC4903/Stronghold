@@ -1,8 +1,8 @@
-
 #include "WPILib.h"
 #include "Commands/Command.h"
 #include "Commands/ExampleCommand.h"
 #include "CommandBase.h"
+#include <stdio.h>
 
 class Robot: public IterativeRobot
 {
@@ -41,6 +41,9 @@ private:
 
 	float current;
 
+	//CameraServer *cam = CameraServer::GetInstance();
+	//USBCamera *leCam = new USBCamera("cam0", true);
+
 	void RobotInit()
 	{
 		CommandBase::init();
@@ -48,6 +51,13 @@ private:
 		chooser->AddDefault("Default Auto", new ExampleCommand());
 		//chooser->AddObject("My Auto", new MyAutoCommand());
 		SmartDashboard::PutData("Auto Modes", chooser);
+
+		// Camera stuff
+		//leCam->OpenCamera();
+		//leCam->SetExposureManual(50);
+		//cam->StartAutomaticCapture();
+		CameraServer::GetInstance()->SetQuality(50);
+		CameraServer::GetInstance()->StartAutomaticCapture();
 
 		base_control = new Joystick(5);
 		action_control = new Joystick(4);
@@ -57,7 +67,7 @@ private:
 		talon2 = new Talon(2);
 		talon3 = new Talon(3);
 
-		intake_motor = new CANTalon(0);
+		intake_motor = new CANTalon(4);
 		holding_motor = new CANTalon(1);
 		trebuchet_top_motor = new CANTalon(2);
 		trebuchet_bot_motor = new CANTalon(3);
@@ -65,6 +75,8 @@ private:
 		intake_sensor = new DigitalInput(0);
 
 		is_intaking = false;
+
+		spearSolenoid = new DoubleSolenoid(6, 1, 2);
 
 		c = new Compressor(0);
 	}
@@ -139,14 +151,14 @@ private:
 
 		// Shoot
 		if (action_control->GetRawButton(1)) {
-			treb_top = 1.0;
-			treb_bot = -1.0;
+			treb_top = -1.0 * (((action_control->GetThrottle() - 1) / 2.0));
+			treb_bot = 1.0 * (((action_control->GetThrottle() - 1) / 2.0));
 			hold_val = 1.0;
 		}
 		// Lob the ball at low power from the shooter into the low goal
 		if (action_control->GetRawButton(6)) {
-			treb_top = 0.5;
-			treb_bot = -0.5;
+			treb_top = 0.35;
+			treb_bot = -0.35;
 			hold_val = 1.0;
 		}
 		// Reverse the ball back out the intake part
@@ -176,8 +188,8 @@ private:
 		}
 		// Regular speed of drive motors
 		else {
-			speedL /= 1.75;
-			speedR /= 1.75;
+			speedL /= 2.0;
+			speedR /= 2.0;
 		}
 
 		// Pneumatics section
@@ -188,19 +200,16 @@ private:
 
 		// Spears
 		if (action_control->GetRawButton(7)) {
-			spearSolenoid->Set(DoubleSolenoid::kForward);
+			spearSolenoid->Set(DoubleSolenoid::Value::kForward);
 		} else if (action_control->GetRawButton(8)) {
-			spearSolenoid->Set(DoubleSolenoid::kReverse);
-		}
-		if (action_control->GetRawButton(9)) {
-			spearSolenoid->Set(DoubleSolenoid::kOff);
+			spearSolenoid->Set(DoubleSolenoid::Value::kReverse);
 		}
 
 		// Compressor
 		if (action_control->GetRawButton(11)) {
-			c->SetClosedLoopControl(true);
+			c->Start();
 		} else if (action_control->GetRawButton(12)) {
-			c->SetClosedLoopControl(false);
+			c->Stop();
 		}
 
 
@@ -211,10 +220,15 @@ private:
 		talon3->Set(-speedL);
 
 		// Set shooting and intake talons
-		trebuchet_top_motor->Set(-treb_top);
-		trebuchet_bot_motor->Set(-treb_bot);
+		std::cout << ((action_control->GetThrottle() - 1) / 2.0)*100 << std::endl;
+		trebuchet_top_motor->Set(treb_top);
+		trebuchet_bot_motor->Set(treb_bot);
 		intake_motor->Set(-intake_val);
 		holding_motor->Set(hold_val);
+
+		if (current > 125.0) {
+			// over pressure
+		}
 
 	}
 
