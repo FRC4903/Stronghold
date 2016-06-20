@@ -5,15 +5,13 @@
  */
 
 #include "Auto.h"
+#include "Data.h"
 
-using namespace std;
-
-Auto::Auto()
-{
-	// Auto constructor
+Auto::Auto() {
+	library = Data::getInstance();
 }
 
 Auto::~Auto()
 {
-	// Auto deconstructor
+	delete library;
 }

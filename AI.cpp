@@ -1,19 +1,19 @@
 /*
- * File Name:	AI.cpp
- * Description:	AI class handles algorithms and mathematical problems.
- * Manager: 	Dilpreet Chana
+ * @File: 			AI.cpp
+ * @Description: 	AI class handles algorithms and mathematical problems.
+ * @Author: 		Dilpreet Chana
+ *
  */
 
 #include "AI.h"
-
-using namespace std;
+#include "Data.h"
 
 AI::AI()
 {
-	// AI constructor
+	library = Data::getInstance();
 }
 
 AI::~AI()
 {
-	// AI deconstructor
+	delete library;
 }
